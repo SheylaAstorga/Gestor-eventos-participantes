@@ -104,3 +104,27 @@ body{
     background-color: #1e293b;
     border-radius: 12px;
 }
+
+.footer{
+    margin-top: 50px;
+    padding: 25px;
+    text-align: center;
+    background-color: #1e293b;
+}
+
+.footer h5{
+    margin-bottom: 10px;
+}
+
+.footer span{
+    color: #3b82f6;
+}
+
+.footer p{
+    color: #94a3b8;
+    margin-bottom: 5px;
+}
+
+.footer small{
+    color: #64748b;
+}

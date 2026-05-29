@@ -61,132 +61,102 @@
 
             </div>
             <div class="empty-state mb-3">
-
                 <h3>No hay eventos registrados</h3>
-
                 <p>
                     Presiona "Crear Evento" para comenzar.
                 </p>
-
             </div>
             <section id="contenedor-eventos" class="eventos-grid">
 
                 <!-- Evento ejemplo -->
 
                 <div class="evento-card">
-
                     <div class="evento-header">
-
                         <h3>Taller de JavaScript</h3>
-
                         <span class="badge bg-success">
                             Abierto
                         </span>
-
                     </div>
 
                     <div class="evento-body">
-
                         <p><strong>Fecha:</strong> 20/07/2026</p>
-
                         <p><strong>Lugar:</strong> Aula 3</p>
-
                         <p><strong>Capacidad:</strong> 30 participantes</p>
-
                     </div>
 
                     <div class="evento-footer">
-
                         <button class="btn btn-warning">
                             Editar
                         </button>
-
                         <button class="btn btn-danger">
                             Eliminar
                         </button>
-
                     </div>
-
                 </div>
-
             </section>
-
         </main>
     </div>
     <!-- Modal Crear Evento -->
     <div class="modal fade" id="modalEvento" tabindex="-1" aria-labelledby="modalEventoLabel" aria-hidden="true">
 
         <div class="modal-dialog">
-
             <div class="modal-content">
-
                 <div class="modal-header">
-
                     <h5 class="modal-title" id="modalEventoLabel">
-
                         Crear Evento
-
                     </h5>
 
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar">
                     </button>
-
                 </div>
 
                 <div class="modal-body">
 
                     <input type="text" class="form-control mb-3" placeholder="Nombre del evento">
-
                     <input type="date" class="form-control mb-3">
-
                     <input type="text" class="form-control mb-3" placeholder="Lugar">
-
                     <input type="number" class="form-control mb-3" placeholder="Capacidad máxima">
 
                     <select class="form-select">
-
                         <option selected>
                             Estado del evento
                         </option>
-
                         <option>
                             Abierto
                         </option>
-
                         <option>
                             Cerrado
                         </option>
-
                         <option>
                             Finalizado
                         </option>
-
                     </select>
-
                 </div>
 
                 <div class="modal-footer">
-
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-
                         Cancelar
-
                     </button>
 
                     <button type="button" class="btn btn-primary">
-
                         Guardar
-
                     </button>
-
                 </div>
-
             </div>
-
         </div>
-
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <footer class="footer">
+        <h5>
+            <span>Event</span>Hub
+        </h5>
+        <p>
+            &copy; 2026 EventHub. Sistema de gestión de eventos, participantes e inscripciones.
+        </p>
+        <small>
+            Programación III - 2026
+        </small>
+    </footer>
 </body>
 
 </html>
