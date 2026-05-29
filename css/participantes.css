@@ -92,3 +92,28 @@ body{
 .footer small{
     color: #64748b;
 }
+
+
+@media (max-width: 768px){
+
+    .app-container{
+        flex-direction: column;
+    }
+
+    .sidebar{
+        width: 100%;
+        height: auto;
+    }
+
+    .sidebar nav{
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .main-content{
+        width: 100%;
+    }
+
+}

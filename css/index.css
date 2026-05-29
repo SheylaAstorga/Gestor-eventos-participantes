@@ -107,20 +107,13 @@ body{
     gap: 20px;
 }
 
-.info-grid ul,
-.equipo ul{
-    margin-top: 15px;
-    padding-left: 20px;
+.equipo-img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
 }
 
-.info-grid li,
-.equipo li{
-    margin-bottom: 10px;
-}
 
-.equipo{
-    margin-top: 40px;
-}
 
 .footer{
     margin-top: 50px;
@@ -144,4 +137,29 @@ body{
 
 .footer small{
     color: #64748b;
+}
+
+
+@media (max-width: 768px){
+
+    .app-container{
+        flex-direction: column;
+    }
+
+    .sidebar{
+        width: 100%;
+        height: auto;
+    }
+
+    .sidebar nav{
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .main-content{
+        width: 100%;
+    }
+
 }
