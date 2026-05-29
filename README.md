@@ -46,7 +46,7 @@ La aplicación permite administrar eventos, registrar participantes e inscribir 
 ### Clonar el repositorio
 
 ```bash
-git clone URL_DEL_REPOSITORIO
+git clone https://github.com/SheylaAstorga/Gestor-eventos-participantes.git
 ```
 
 ### Instalar json-server
