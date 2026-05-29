@@ -23,31 +23,103 @@
         <aside class="sidebar">
             <h2><span>Event</span>Hub</h2>
             <nav>
-                <a href="#">Dashboard</a>
-                <a href="#">Eventos</a>
-                <a href="#">Participantes</a>
-                <a href="#">Inscripciones</a>
+                <a href="index.html">Dashboard</a>
+                <a href="./pages/eventos.html">Eventos</a>
+                <a href="./pages/participantes.html">Participantes</a>
+                <a href="./pages/inscripciones.html">Inscripciones</a>
 
             </nav>
         </aside>
         <main class="main-content">
+
             <header class="topbar">
                 <h1>Gestor de Eventos y Participantes</h1>
+                <p>Administra eventos, participantes e inscripciones desde un único lugar.</p>
             </header>
+
+            <!-- Estadísticas -->
             <section class="dashboard">
+
                 <div class="card-dashboard">
                     <h3>Eventos</h3>
-                    <p>0</p>
+                    <p id="total-eventos">0</p>
                 </div>
+
                 <div class="card-dashboard">
                     <h3>Participantes</h3>
-                    <p>0</p>
+                    <p id="total-participantes">0</p>
                 </div>
+
                 <div class="card-dashboard">
                     <h3>Inscripciones</h3>
-                    <p>0</p>
+                    <p id="total-inscripciones">0</p>
                 </div>
+
             </section>
+
+            <!-- Acciones rápidas -->
+            <section class="quick-actions">
+
+                <h2>Acciones rápidas</h2>
+
+                <div class="actions-container">
+
+                    <a href="./pages/eventos.html" class="btn btn-primary">
+                        Gestionar Eventos
+                    </a>
+
+                    <a href="./pages/participantes.html" class="btn btn-success">
+                        Gestionar Participantes
+                    </a>
+
+                    <a href="./pages/inscripciones.html" class="btn btn-info">
+                        Gestionar Inscripciones
+                    </a>
+
+                </div>
+
+            </section>
+
+            <!-- Información general -->
+            <section class="info-grid">
+
+                <div class="card-dashboard">
+
+                    <h3>Próximos Eventos</h3>
+
+                    <ul id="proximos-eventos">
+                        <li>No hay eventos registrados.</li>
+                    </ul>
+
+                </div>
+
+                <div class="card-dashboard">
+
+                    <h3>Últimas Inscripciones</h3>
+
+                    <ul id="ultimas-inscripciones">
+                        <li>No hay inscripciones registradas.</li>
+                    </ul>
+
+                </div>
+
+            </section>
+
+            <!-- Equipo -->
+            <section class="equipo card-dashboard">
+
+                <h3>Equipo de Desarrollo</h3>
+
+                <ul>
+                    <li>Sheyla Astorga</li>
+                    <li>Facundo Boixados</li>
+                    <li>Juan David Lobo</li>
+                    <li>Sebastián Uncos</li>
+                    <li>Ignacio Valverde</li>
+                </ul>
+
+            </section>
+
         </main>
     </div>
 </body>
