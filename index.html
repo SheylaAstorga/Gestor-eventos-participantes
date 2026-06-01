@@ -9,16 +9,150 @@
     <meta name="keywords"
         content="eventos, participantes, inscripciones, CRUD, JavaScript, Axios, json-server, HTML, CSS, programación web">
     <meta name="author" content="Astorga Sheyla, Boixados Facundo, Lobo Juan David, Uncos Sebastian, Valverde Ignacio">
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Gestor de Eventos</title>
 </head>
 
 <body>
- <header></header>
- <main></main>
- <footer></footer>
+    <div class="app-container">
+        <aside class="sidebar">
+            <h2><span>Event</span>Hub</h2>
+            <nav>
+                <a href="index.html">Dashboard</a>
+                <a href="./pages/eventos.html">Eventos</a>
+                <a href="./pages/participantes.html">Participantes</a>
+                <a href="./pages/inscripciones.html">Inscripciones</a>
+
+            </nav>
+        </aside>
+        <main class="main-content">
+
+            <header class="topbar">
+                <h1>Gestor de Eventos y Participantes</h1>
+                <p>Administra eventos, participantes e inscripciones desde un único lugar.</p>
+            </header>
+
+            <!-- Estadísticas -->
+            <section class="dashboard">
+
+                <div class="card-dashboard">
+                    <h3>Eventos</h3>
+                    <p id="total-eventos">0</p>
+                </div>
+
+                <div class="card-dashboard">
+                    <h3>Participantes</h3>
+                    <p id="total-participantes">0</p>
+                </div>
+
+            </section>
+
+            <!-- Acciones rápidas -->
+            <section class="quick-actions">
+
+                <h2>Acciones rápidas</h2>
+
+                <div class="actions-container">
+
+                    <a href="./pages/eventos.html" class="btn btn-primary">
+                        Gestionar Eventos
+                    </a>
+
+                    <a href="./pages/participantes.html" class="btn btn-success">
+                        Gestionar Participantes
+                    </a>
+
+                    <a href="./pages/inscripciones.html" class="btn btn-info">
+                        Gestionar Inscripciones
+                    </a>
+
+                </div>
+
+            </section>
+
+            <!-- Información general -->
+            <section class="info-grid">
+
+                <div class="card-dashboard">
+
+                    <h3>Próximos Eventos</h3>
+
+                    <ul id="proximos-eventos">
+                        <li>No hay eventos registrados.</li>
+                    </ul>
+
+                </div>
+
+                <div class="card-dashboard">
+
+                    <h3>Últimas Inscripciones</h3>
+
+                    <ul id="ultimas-inscripciones">
+                        <li>No hay inscripciones registradas.</li>
+                    </ul>
+
+                </div>
+
+            </section>
+
+            <!-- Equipo -->
+            <section class="mt-5">
+
+                <h2 class="mb-4">Equipo de Desarrollo</h2>
+
+                <div class="d-flex justify-content-center gap-4 flex-wrap">
+
+                    <div class="text-center">
+                        <img src="img/shey.png" class="rounded-circle equipo-img" alt="Sheyla Astorga">
+                        <p class="mt-2 mb-0">Sheyla Astorga</p>
+                    </div>
+
+                    <div class="text-center">
+                        <img src="img/facu.jpeg" class="rounded-circle equipo-img" alt="Facundo Boixados">
+                        <p class="mt-2 mb-0">Facundo Boixados</p>
+                    </div>
+
+                    <div class="text-center">
+                        <img src="img/juan.jpeg" class="rounded-circle equipo-img" alt="Juan David Lobo">
+                        <p class="mt-2 mb-0">Juan David Lobo</p>
+                    </div>
+
+                    <div class="text-center">
+                        <img src="img/seba.jpeg" class="rounded-circle equipo-img" alt="Sebastián Uncos">
+                        <p class="mt-2 mb-0">Sebastián Uncos</p>
+                    </div>
+
+                    <div class="text-center">
+                        <img src="img/nacho.jpeg" class="rounded-circle equipo-img" alt="Ignacio Valverde">
+                        <p class="mt-2 mb-0">Ignacio Valverde</p>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+    </div>
+    <footer class="footer">
+
+        <h5>
+            <span>Event</span>Hub
+        </h5>
+
+        <p>
+            &copy; 2026 EventHub. Sistema de gestión de eventos, participantes e inscripciones.
+        </p>
+
+        <small>
+            Programación III - 2026
+        </small>
+
+    </footer>
 </body>
 
 </html>

@@ -13,9 +13,9 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/participantes.css">
+    <link rel="stylesheet" href="../css/inscripciones.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <title>Participantes</title>
+    <title>Inscripciones</title>
 </head>
 
 <body>
@@ -32,44 +32,76 @@
         </aside>
         <main class="main-content">
             <header class="topbar">
-                <h1>Gestión de Participantes</h1>
+
+                <h1>Gestión de Inscripciones</h1>
                 <p>
-                    Administra los participantes registrados.
+                    Administra las inscripciones de participantes a eventos.
                 </p>
             </header>
 
-            <section class="participantes-header">
-                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalParticipante">
-                    Registrar Participante
+            <section class="inscripciones-header">
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalInscripcion">
+                    Nueva Inscripción
                 </button>
             </section>
 
-            <div class="mb-4">
-                <input type="text" class="form-control" placeholder="Buscar participante...">
+            <div class="row mb-4">
+                <div class="col-md-6 mb-3 mb-lg-0">
+
+                    <select class="form-select">
+                        <option>Todos los eventos</option>
+                    </select>
+
+                </div>
+
+                <div class="col-md-6">
+
+                    <select class="form-select">
+
+                        <option>Todos los estados</option>
+                        <option>Confirmado</option>
+                        <option>Asistió</option>
+                        <option>Ausente</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="empty-state mb-4">
+
+                <h3>No hay inscripciones registradas</h3>
+
+                <p>
+                    Presiona "Nueva Inscripción" para comenzar.
+                </p>
+
             </div>
 
             <div class="table-responsive">
-
                 <table class="table table-dark table-hover">
-
                     <thead>
                         <tr>
-                            <th>Nombre</th>
-                            <th>Correo</th>
-                            <th>Teléfono</th>
-                            <th>Eventos</th>
+                            <th>Participante</th>
+                            <th>Evento</th>
+                            <th>Fecha</th>
+                            <th>Estado</th>
                             <th>Acciones</th>
-
                         </tr>
                     </thead>
 
-                    <tbody id="tabla-participantes">
+                    <tbody id="tabla-inscripciones">
 
                         <tr>
+
                             <td>Martín López</td>
-                            <td>martin@email.com</td>
-                            <td>3815550173</td>
-                            <td>2</td>
+                            <td>Taller JavaScript</td>
+                            <td>15/06/2026</td>
+
+                            <td>
+                                <span class="badge bg-success">
+                                    Confirmado
+                                </span>
+                            </td>
 
                             <td>
                                 <button class="btn btn-warning btn-sm">
@@ -83,37 +115,50 @@
                     </tbody>
                 </table>
             </div>
-
         </main>
     </div>
-    <div class="modal fade" id="modalParticipante">
+    <div class="modal fade" id="modalInscripcion" tabindex="-1" aria-hidden="true">
+
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">
-                        Registrar Participante
+                        Nueva Inscripción
                     </h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal">
                     </button>
                 </div>
 
                 <div class="modal-body">
-                    <input type="text" class="form-control mb-3" placeholder="Nombre completo">
-                    <input type="email" class="form-control mb-3" placeholder="Correo electrónico">
-                    <input type="text" class="form-control" placeholder="Teléfono">
+                    <select class="form-select mb-3">
+                        <option selected>
+                            Seleccione un evento
+                        </option>
+                    </select>
+
+                    <select class="form-select mb-3">
+                        <option selected>
+                            Seleccione un participante
+                        </option>
+                    </select>
+
+                    <select class="form-select">
+                        <option>Confirmado</option>
+                        <option>Asistió</option>
+                        <option>Ausente</option>
+                    </select>
                 </div>
 
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" data-bs-dismiss="modal">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                         Cancelar
                     </button>
-                    <button class="btn btn-primary">
+                    <button type="button" class="btn btn-primary">
                         Guardar
                     </button>
                 </div>
             </div>
         </div>
-
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <footer class="footer">

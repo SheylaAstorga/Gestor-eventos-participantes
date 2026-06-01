@@ -1,0 +1,154 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Poppins', sans-serif;
+  background-color: #212020;
+  color: #f8fafc;
+}
+
+.app-container{
+  display: flex;
+  min-height: 100vh;
+}
+
+
+.sidebar{
+  width: 250px;
+  background-color: #1e293b;
+  padding: 30px 20px;
+}
+.sidebar span{
+  color: #3b82f6;
+}
+.sidebar h3{
+  margin-bottom: 40px;
+  color: #3b82f6;
+}
+
+.sidebar nav{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.sidebar a{
+  text-decoration: none;
+  color: #f8fafc;
+  padding: 12px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.sidebar a:hover{
+  background-color: #3b82f6;
+}
+
+
+.main-content{
+  flex: 1;
+  padding: 30px;
+}
+
+
+.topbar{
+  margin-bottom: 30px;
+}
+
+.eventos-header{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+}
+
+.eventos-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+    gap: 20px;
+}
+
+.evento-card{
+    background-color: #1e293b;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.evento-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.evento-header h3{
+    margin: 0;
+}
+
+.evento-body p{
+    margin-bottom: 10px;
+}
+
+.evento-footer{
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.empty-state{
+    text-align: center;
+    padding: 60px;
+    background-color: #1e293b;
+    border-radius: 12px;
+}
+
+.footer{
+    margin-top: 50px;
+    padding: 25px;
+    text-align: center;
+    background-color: #1e293b;
+}
+
+.footer h5{
+    margin-bottom: 10px;
+}
+
+.footer span{
+    color: #3b82f6;
+}
+
+.footer p{
+    color: #94a3b8;
+    margin-bottom: 5px;
+}
+
+.footer small{
+    color: #64748b;
+}
+
+@media (max-width: 768px){
+
+    .app-container{
+        flex-direction: column;
+    }
+
+    .sidebar{
+        width: 100%;
+        height: auto;
+    }
+
+    .sidebar nav{
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .main-content{
+        width: 100%;
+    }
+
+}
