@@ -15,6 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/inscripciones.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../js/inscripciones.js" defer></script>
     <title>Inscripciones</title>
 </head>
 
@@ -48,20 +49,19 @@
             <div class="row mb-4">
                 <div class="col-md-6 mb-3 mb-lg-0">
 
-                    <select class="form-select">
-                        <option>Todos los eventos</option>
+                    <select id="filtroEvento" class="form-select">
+                        <option value="">Todos los eventos</option>
                     </select>
 
                 </div>
 
                 <div class="col-md-6">
 
-                    <select class="form-select">
-
-                        <option>Todos los estados</option>
-                        <option>Confirmado</option>
-                        <option>Asistió</option>
-                        <option>Ausente</option>
+                    <select id="filtroEstado" class="form-select">
+                        <option value="">Todos los estados</option>
+                        <option value="Confirmado">Confirmado</option>
+                        <option value="Asistio">Asistio</option>
+                        <option value="Ausente">Ausente</option>
                     </select>
                 </div>
             </div>
@@ -130,8 +130,8 @@
                 </div>
 
                 <div class="modal-body">
-                    <select class="form-select mb-3">
-                        <option selected>
+                    <select id="selecEvento" class="form-select mb-3">
+                        <option value="" selected>
                             Seleccione un evento
                         </option>
                     </select>
@@ -153,7 +153,7 @@
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                         Cancelar
                     </button>
-                    <button type="button" class="btn btn-primary">
+                    <button type="button" id="btnGuardarInscripcion" class="btn btn-primary">
                         Guardar
                     </button>
                 </div>
