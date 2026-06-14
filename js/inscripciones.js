@@ -129,3 +129,52 @@ async function mostrarInscripciones() {
         mostrarFilaInscripcion(inscripcion);
     });
 }
+
+function mostrarFilaInscripcion(inscripcion) {
+    const participante = participantes.find(participante => participante.id == inscripcion.participanteId);
+    const evento = eventos.find(evento => evento.id == inscripcion.eventoId);
+
+    const fila = document.createElement("tr");
+
+    const tdParticipante = document.createElement("td");
+    tdParticipante.textContent = participante ? participante.nombre : "Sin participante";
+
+    const tdEvento = document.createElement("td");
+    tdEvento.textContent = evento ? evento.nombre : "Sin evento";
+
+    const tdFecha = document.createElement("td");
+    tdFecha.textContent = inscripcion.fecha;
+
+    const tdEstado = document.createElement("td");
+    const badgeEstado = document.createElement("span");
+    badgeEstado.textContent = inscripcion.estado;
+    badgeEstado.className = obtenerClaseEstado(inscripcion.estado);
+    tdEstado.appendChild(badgeEstado);
+
+    const tdAcciones = document.createElement("td");
+    tdAcciones.textContent = "-";
+
+    fila.appendChild(tdParticipante);
+    fila.appendChild(tdEvento);
+    fila.appendChild(tdFecha);
+    fila.appendChild(tdEstado);
+    fila.appendChild(tdAcciones);
+
+    tablaInscripciones.appendChild(fila);
+}
+
+function obtenerClaseEstado(estado) {
+    if (estado === "Confirmado") {
+        return "badge bg-success";
+    }
+
+    if (estado === "AsistiÓ") {
+        return "badge bg-primary";
+    }
+
+    if (estado === "Ausente") {
+        return "badge bg-danger";
+    }
+
+    return "badge bg-secondary";
+}
