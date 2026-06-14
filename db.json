@@ -30,7 +30,14 @@
       "correo": "sheylaastorga1998@gmail.com",
       "telefono": "3815832968",
       "id": "Q8vdPEY5rEI"
+    },
+    {
+      "nombre": "luciano",
+      "correo": "luciano123@gmail.com",
+      "telefono": "381361731",
+      "id": "JCKtHai5Wws"
     }
   ],
-  "inscripciones": []
+  "inscripciones": [],
+  "$schema": "./node_modules/json-server/schema.json"
 }

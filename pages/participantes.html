@@ -40,7 +40,7 @@
             </header>
 
             <section class="participantes-header">
-                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal_participante">
+                <button onclick="crear_participante()" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal_participante">
                     Registrar Participante
                 </button>
             </section>
@@ -55,6 +55,7 @@
 
                     <thead>
                         <tr>
+                            <th>ID</th>
                             <th>Nombre</th>
                             <th>Correo</th>
                             <th>Teléfono</th>
@@ -63,24 +64,8 @@
 
                         </tr>
                     </thead>
-
                     <tbody id="tabla-participantes">
 
-                        <tr>
-                            <td>Martín López</td>
-                            <td>martin@email.com</td>
-                            <td>3815550173</td>
-                            <td>2</td>
-
-                            <td>
-                                <button class="btn btn-warning btn-sm">
-                                    Editar
-                                </button>
-                                <button class="btn btn-danger btn-sm">
-                                    Eliminar
-                                </button>
-                            </td>
-                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -99,7 +84,7 @@
                 </div>
 
                 <div class="modal-body">
-                    <input type="text" id= "input_nombre" class="form-control mb-3" placeholder="Nombre completo">
+                    <input type="text" id="input_nombre" class="form-control mb-3" placeholder="Nombre completo">
                     <input type="email" id="input_correo" class="form-control mb-3" placeholder="Correo electrónico">
                     <input type="text" id="input_telefono" class="form-control" placeholder="Teléfono">
                 </div>

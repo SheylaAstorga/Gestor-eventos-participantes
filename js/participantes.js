@@ -6,6 +6,24 @@ const obtenerParticipantes = async () => {
     try{
         const response = await axios.get(API_URL)
         console.log(response.data)
+        const tbody = document.getElementById('tabla-participantes')
+        const datos = response.data
+        tbody.innerHTML = "";
+        datos.forEach(participante =>{
+            const tr = document.createElement('tr')
+            tr.innerHTML = `
+                <td>${participante.id}</td>
+                <td>${participante.nombre}</td>
+                <td>${participante.correo}</td>
+                <td>${participante.telefono}</td>
+                <td>${participante.eventoId}</td>
+                <td><button class="btn btn-sm btn-warning">Editar</button>
+                <button class="btn btn-sm btn-danger">Eliminar</button>
+                </td>
+                `
+            tbody.appendChild(tr)
+        })
+
     } catch (error) {
         console.error("Error al obtener participantes:", error)
     }
