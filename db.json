@@ -1,5 +1,31 @@
 {
   "eventos": [],
-  "participantes": [],
-  "inscripciones": []
+  "participantes": [
+    {
+      "nombre": "Alexis Diaz",
+      "correo": "alexisdiaz@gmail.com",
+      "telefono": "3813097482",
+      "id": "lrl8ZUYqygk"
+    },
+    {
+      "nombre": "Ana Rodriguez",
+      "correo": "ana@gmail.com",
+      "telefono": "3814902411",
+      "id": "j4koMNuXRhA"
+    },
+    {
+      "nombre": "Paula Garcia",
+      "correo": "paula@gmail.com",
+      "telefono": "3815904077",
+      "id": "uvgbLibkYIw"
+    },
+    {
+      "nombre": "Diego Acosta",
+      "correo": "diego@gmail,com",
+      "telefono": "3812390556",
+      "id": "O6AUu6mDuHg"
+    }
+  ],
+  "inscripciones": [],
+  "$schema": "./node_modules/json-server/schema.json"
 }
