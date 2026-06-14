@@ -72,3 +72,36 @@ function cargarSelectParticipantes() {
         selecParticipante.appendChild(option);
     });
 }
+
+async function crearInscripcion() {
+    const eventoId = selecEvento.value;
+    const participanteId = selecParticipante.value;
+
+    if (eventoId === "" || participanteId === "") {
+        alert("Debe seleccionar un evento y un participante");
+        return;
+    }
+
+    const datos = {
+        eventoId: Number(eventoId),
+        participanteId: Number(participanteId),
+        fecha: new Date().toLocaleDateString(),
+        estado: "Confirmado"
+    };
+
+    await axios.post(`${API_URL}/inscripciones`, datos);
+
+    filtroEvento.value = eventoId;
+    filtroEstado.value = "";
+    selecEvento.value = "";
+    selecParticipante.value = "";
+
+    await mostrarInscripciones();
+
+    const modal = bootstrap.Modal.getInstance(document.getElementById("modalInscripcion"));
+
+    if (modal) {
+        modal.hide();
+    }
+}
+
