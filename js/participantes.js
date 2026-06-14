@@ -1,0 +1,28 @@
+// js/participantes.js
+// API donde se guardan los participantes
+const API_URL = "http://localhost:3000/participantes"
+
+async function crear_participante() {
+    // Obtiene el texto escrito en el formulario
+    const nombre = document.getElementById("input_nombre").value
+    const correo = document.getElementById("input_correo").value
+    const telefono = document.getElementById("input_telefono").value
+
+    // Si algun campo esta vacio, muestra una alerta
+    if (!nombre || !correo || !telefono) {
+        alert("Por favor completá todos los campos.")
+        return
+    }
+
+    try {
+        // Envia el nuevo participante al servidor y espera confirmacion
+        await axios.post(API_URL, {nombre, correo, telefono})
+    } catch (error) {
+        // Si hay un error lo muestra en consola y avisa al usuario
+        console.error("Error al crear participante:", error);
+        alert("Hubo un error al guardar el participante.");
+    }
+}
+
+// Busca el boton guardar y le asigna la funcion al hacer click
+document.getElementById("btn_guardar").addEventListener("click", crear_participante);

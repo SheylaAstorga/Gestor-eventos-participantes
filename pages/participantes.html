@@ -15,6 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/participantes.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../js/participantes.js" defer></script>
     <title>Participantes</title>
 </head>
 
@@ -39,7 +40,7 @@
             </header>
 
             <section class="participantes-header">
-                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalParticipante">
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal_participante">
                     Registrar Participante
                 </button>
             </section>
@@ -86,7 +87,7 @@
 
         </main>
     </div>
-    <div class="modal fade" id="modalParticipante">
+    <div class="modal fade" id="modal_participante">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -98,16 +99,16 @@
                 </div>
 
                 <div class="modal-body">
-                    <input type="text" class="form-control mb-3" placeholder="Nombre completo">
-                    <input type="email" class="form-control mb-3" placeholder="Correo electrónico">
-                    <input type="text" class="form-control" placeholder="Teléfono">
+                    <input type="text" id= "input_nombre" class="form-control mb-3" placeholder="Nombre completo">
+                    <input type="email" id="input_correo" class="form-control mb-3" placeholder="Correo electrónico">
+                    <input type="text" id="input_telefono" class="form-control" placeholder="Teléfono">
                 </div>
 
                 <div class="modal-footer">
                     <button class="btn btn-secondary" data-bs-dismiss="modal">
                         Cancelar
                     </button>
-                    <button class="btn btn-primary">
+                    <button class="btn btn-primary" id="btn_guardar" data-bs-dismiss="modal">
                         Guardar
                     </button>
                 </div>
