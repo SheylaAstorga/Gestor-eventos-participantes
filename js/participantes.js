@@ -2,6 +2,19 @@
 // API donde se guardan los participantes
 const API_URL = "http://localhost:3000/participantes"
 
+const obtenerParticipantes = async () => {
+    try{
+        const response = await axios.get(API_URL)
+        console.log(response.data)
+    } catch (error) {
+        console.error("Error al obtener participantes:", error)
+    }
+}
+
+obtenerParticipantes();
+
+
+
 async function crear_participante() {
     // Obtiene el texto escrito en el formulario
     const nombre = document.getElementById("input_nombre").value
