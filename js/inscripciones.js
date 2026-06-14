@@ -105,3 +105,27 @@ async function crearInscripcion() {
     }
 }
 
+async function mostrarInscripciones() {
+    const eventoId = filtroEvento.value;
+    const estado = filtroEstado.value;
+
+    tablaInscripciones.innerHTML = "";
+
+    let respuesta;
+
+    if (eventoId === "") {
+        respuesta = await axios.get(`${API_URL}/inscripciones`);
+    } else {
+        respuesta = await axios.get(`${API_URL}/inscripciones?eventoId=${Number(eventoId)}`);
+    }
+
+    let inscripciones = respuesta.data;
+
+    if (estado !== "") {
+        inscripciones = inscripciones.filter(inscripcion => inscripcion.estado === estado);
+    }
+
+    inscripciones.forEach(inscripcion => {
+        mostrarFilaInscripcion(inscripcion);
+    });
+}
