@@ -8,7 +8,7 @@ const obtenerParticipantes = async () => {
     console.log(response.data);
     const tbody = document.getElementById("tabla-participantes");
     const datos = response.data;
-    tbody.innerHTML = "";
+    tbody.textContent = "";
     datos.forEach((participante) => {
       const tr = document.createElement("tr");
       tr.innerHTML = `
@@ -18,7 +18,7 @@ const obtenerParticipantes = async () => {
                 <td>${participante.telefono}</td>
                 <td>${participante.eventoId}</td>
                 <td><button class="btn btn-sm btn-warning" onclick="editar_participante('${participante.id}')">Editar</button>
-                <button class="btn btn-sm btn-danger">Eliminar</button>
+                <button class="btn btn-sm btn-danger onclick="editar_participante('${participante.id}')">Eliminar</button>
                 </td>
                 `;
       tbody.appendChild(tr);
@@ -55,6 +55,36 @@ async function crear_participante() {
   }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const eliminarParticipante = async(id) =>{
+  
+}
+
+
 // Busca el boton guardar y le asigna la funcion al hacer click
 document
   .getElementById("btn_guardar")
@@ -74,7 +104,7 @@ document
 
     const tbody = document.getElementById("tabla-participantes");
 
-    tbody.innerHTML = "";
+    tbody.textContent = "";
 
     participantesFiltrados.forEach((participante) => {
       const tr = document.createElement("tr");
