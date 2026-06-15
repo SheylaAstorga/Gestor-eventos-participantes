@@ -1,4 +1,4 @@
-// js/participantes.js
+
 // API donde se guardan los participantes
 const API_URL = "http://localhost:3000/participantes";
 
@@ -55,28 +55,56 @@ async function crear_participante() {
   }
 }
 
+// Guarda el id del participante que se va a editar
+let id_editar = null
+
+async function editar_participante(id) {
+  // Guarda el id del participante seleccionado
+  id_editar = id
+
+  // Trae los datos del participante
+  const respuesta = await axios.get(`${API_URL}/${id}`)
+  const participante = respuesta.data
+
+  // Carga los datos del participante 
+  document.getElementById("editar_nombre").value = participante.nombre
+  document.getElementById("editar_correo").value = participante.correo
+  document.getElementById("editar_telefono").value = participante.telefono
 
 
+  // Abre el formulario para editar
+  const modal = new bootstrap.Modal(document.getElementById("modal_editar"))
+  modal.show()
+}
 
+async function actualizar_participante() {
 
+  //Obtiene los nuevos valores
+  const nombre = document.getElementById("editar_nombre").value
+  const correo = document.getElementById("editar_correo").value
+  const telefono = document.getElementById("editar_telefono").value
 
+  // Nuevamente si algun campo esta vacio, muestra una alerta
+  if (!nombre || !correo || !telefono) {
+    alert("Por favor completa todos los campos.")
+    return
+  }
 
+  try {
+    // Envia los datos actualizados al servidor 
+    await axios.patch(`${API_URL}/${id_editar}`, {nombre, correo, telefono})
+    // Carga la tabla con los datos actualizados
+    obtenerParticipantes()
+  } catch (error) {
+    console.error("Error al actualizar participante: ", error)
+    alert("hubo un error al actualizar el participante")
+  }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Asigna la funcion al boton guardar guardar de editar
+document
+  .getElementById("btn_actualizar")
+  .addEventListener("click", actualizar_participante)
 
 
 
@@ -124,43 +152,3 @@ document
       tbody.appendChild(tr);
     });
   });
-
-// Guarda el id del participante que se va a editar
-let id_editando = null
-
-async function editar_participante(id) {
-  id_editando = id
-
-  const respuesta = await axios.get(`${API_URL}/${id}`)
-  const participante = respuesta.data
-
-  document.getElementById("editar_nombre").value = participante.nombre
-  document.getElementById("editar_correo").value = participante.correo
-  document.getElementById("editar_telefono").value = participante.telefono
-
-  const modal = new bootstrap.Modal(document.getElementById("modal_editar"))
-  modal.show()
-}
-
-async function actualizar_participante() {
-
-  const nombre = document.getElementById("editar_nombre").value
-  const correo = document.getElementById("editar_correo").value
-  const telefono = document.getElementById("editar_telefono").value
-
-  if (!nombre || !correo || !telefono) {
-    alert("Por favor completa todos los campos.")
-    return
-  }
-
-  try {
-    await axios.patch(`${API_URL}/${id_editando}`, {nombre, correo, telefono})
-
-    obtenerParticipantes()
-  } catch (error) {
-    console.error("Error al actualizar participante: ", error)
-    alert("hubo un error al actualizar el participante")
-  }
-}
-
-document.getElementById("btn_actualizar").addEventListener("click", actualizar_participante)
