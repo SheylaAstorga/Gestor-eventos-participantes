@@ -18,7 +18,7 @@ const obtenerParticipantes = async () => {
                 <td>${participante.telefono}</td>
                 <td>${participante.eventoId}</td>
                 <td><button class="btn btn-sm btn-warning" onclick="editar_participante('${participante.id}')">Editar</button>
-                <button class="btn btn-sm btn-danger onclick="editar_participante('${participante.id}')">Eliminar</button>
+                <button class="btn btn-sm btn-danger" onclick="eliminarParticipante('${participante.id}')">Eliminar</button>
                 </td>
                 `;
       tbody.appendChild(tr);
@@ -108,8 +108,21 @@ document
 
 
 
+
 const eliminarParticipante = async(id) =>{
-  
+  const confirmar = confirm(
+    "¿Está seguro de eliminar este participante?"
+  );
+
+  if (!confirmar) return;
+  try{
+     const response = await axios.delete(`${API_URL}/${id}`)
+      alert("Participante eliminado correctamente")
+      obtenerParticipantes()
+  }catch(error){
+    console.error("Error al eliminar participante: ", error)
+    alert("hubo un error al eliminar el participante")
+  }
 }
 
 
