@@ -83,8 +83,8 @@ async function crearInscripcion() {
     }
 
     const datos = {
-        eventoId: Number(eventoId),
-        participanteId: Number(participanteId),
+        eventoId: (eventoId),
+        participanteId: (participanteId),
         fecha: new Date().toLocaleDateString(),
         estado: "Confirmado"
     };
