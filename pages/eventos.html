@@ -15,6 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/eventos.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../js/eventos.js" defer></script>
     <title>Gestor de Eventos</title>
 </head>
 
@@ -47,7 +48,7 @@
             <div class="row mb-4">
 
                 <div class="col-md-8 mb-3 mb-lg-0">
-                    <input type="text" class="form-control" placeholder="Buscar evento...">
+                    <input type="text" class="form-control" id="buscar-evento" placeholder="Buscar evento...">
                 </div>
 
                 <div class="col-md-4">
@@ -68,31 +69,6 @@
             </div>
             <section id="contenedor-eventos" class="eventos-grid">
 
-                <!-- Evento ejemplo -->
-
-                <div class="evento-card">
-                    <div class="evento-header">
-                        <h3>Taller de JavaScript</h3>
-                        <span class="badge bg-success">
-                            Abierto
-                        </span>
-                    </div>
-
-                    <div class="evento-body">
-                        <p><strong>Fecha:</strong> 20/07/2026</p>
-                        <p><strong>Lugar:</strong> Aula 3</p>
-                        <p><strong>Capacidad:</strong> 30 participantes</p>
-                    </div>
-
-                    <div class="evento-footer">
-                        <button class="btn btn-warning">
-                            Editar
-                        </button>
-                        <button class="btn btn-danger">
-                            Eliminar
-                        </button>
-                    </div>
-                </div>
             </section>
         </main>
     </div>
@@ -112,12 +88,12 @@
 
                 <div class="modal-body">
 
-                    <input type="text" class="form-control mb-3" placeholder="Nombre del evento">
-                    <input type="date" class="form-control mb-3">
-                    <input type="text" class="form-control mb-3" placeholder="Lugar">
-                    <input type="number" class="form-control mb-3" placeholder="Capacidad máxima">
+                    <input type="text" class="form-control mb-3" id="input_nombre"placeholder="Nombre del evento">
+                    <input type="date" class="form-control mb-3"id="input_fecha">
+                    <input type="text" class="form-control mb-3" id="input_lugar" placeholder="Lugar">
+                    <input type="number" class="form-control mb-3" id="input_capacidad" placeholder="Capacidad máxima">
 
-                    <select class="form-select">
+                    <select class="form-select" id="input_estado">
                         <option selected>
                             Estado del evento
                         </option>
@@ -138,7 +114,7 @@
                         Cancelar
                     </button>
 
-                    <button type="button" class="btn btn-primary">
+                    <button type="button" class="btn btn-primary" id="btn_guardar">
                         Guardar
                     </button>
                 </div>

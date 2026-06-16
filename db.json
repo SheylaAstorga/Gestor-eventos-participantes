@@ -1,5 +1,30 @@
 {
-  "eventos": [],
-  "participantes": [],
-  "inscripciones": []
+  "eventos": [
+    {
+      "id": "evt001",
+      "nombre": "Taller de JavaScript",
+      "fecha": "20/07/2026",
+      "lugar": "Aula 3",
+      "capacidad": 30,
+      "estado": "Abierto"
+    },
+    {
+      "nombre": "asdasd",
+      "fecha": "2026-06-18",
+      "lugar": "asdasd",
+      "capacidad": "123",
+      "estado": "Abierto",
+      "id": "vvB5pLf7ENE"
+    }
+  ],
+  "participantes": [
+    {
+      "nombre": "Sheyla",
+      "correo": "sheylaastorga123@gmail.com",
+      "telefono": "3816937709",
+      "id": "xnR6C78lQa0"
+    }
+  ],
+  "inscripciones": [],
+  "$schema": "./node_modules/json-server/schema.json"
 }
