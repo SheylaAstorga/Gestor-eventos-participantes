@@ -55,9 +55,8 @@ const crearEvento = async () => {
         const fecha = document.getElementById('input_fecha').value;
         const lugar = document.getElementById('input_lugar').value;
         const capacidad = document.getElementById('input_capacidad').value;
-        const estado = document.getElementById('input_estado').value;
 
-        if (!nombre || !fecha || !lugar || !capacidad || !estado) {
+        if (!nombre || !fecha || !lugar || !capacidad ) {
             alert ("Debes completar todos los datos, por favor.")
             return;
         }
@@ -66,8 +65,7 @@ const crearEvento = async () => {
             nombre,
             fecha,
             lugar,
-            capacidad,
-            estado
+            capacidad
         }
 
         const response = await axios.post(API_URL, datosEvento)

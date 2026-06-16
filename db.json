@@ -15,6 +15,22 @@
       "capacidad": "123",
       "estado": "Abierto",
       "id": "vvB5pLf7ENE"
+    },
+    {
+      "nombre": "Hackaton 26'",
+      "fecha": "2026-06-18",
+      "lugar": "UTN",
+      "capacidad": "100",
+      "estado": "Abierto",
+      "id": "KGaBzKun9ok"
+    },
+    {
+      "nombre": "Taller de Ciberseguridad Avanzada",
+      "fecha": "2026-06-25",
+      "lugar": "UTN",
+      "capacidad": "50",
+      "estado": "Finalizado",
+      "id": "gIr4ELDcG_c"
     }
   ],
   "participantes": [
