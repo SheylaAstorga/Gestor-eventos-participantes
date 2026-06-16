@@ -23,5 +23,14 @@
       "telefono": "381-402-2495"
     }
   ],
-  "inscripciones": []
+  "inscripciones": [
+    {
+      "eventoId": "1",
+      "participanteId": "2",
+      "fecha": "16/6/2026",
+      "estado": "Confirmado",
+      "id": "T8VSWnmac5M"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
