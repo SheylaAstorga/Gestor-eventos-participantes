@@ -1,4 +1,3 @@
-
 // API donde se guardan los participantes
 const API_URL = "http://localhost:3000/participantes";
 
@@ -56,75 +55,80 @@ async function crear_participante() {
 }
 
 // Guarda el id del participante que se va a editar
-let id_editar = null
+let id_editar = null;
 
 async function editar_participante(id) {
   // Guarda el id del participante seleccionado
-  id_editar = id
+  id_editar = id;
 
   // Trae los datos del participante
-  const respuesta = await axios.get(`${API_URL}/${id}`)
-  const participante = respuesta.data
+  const respuesta = await axios.get(`${API_URL}/${id}`);
+  const participante = respuesta.data;
 
-  // Carga los datos del participante 
-  document.getElementById("editar_nombre").value = participante.nombre
-  document.getElementById("editar_correo").value = participante.correo
-  document.getElementById("editar_telefono").value = participante.telefono
-
+  // Carga los datos del participante
+  document.getElementById("editar_nombre").value = participante.nombre;
+  document.getElementById("editar_correo").value = participante.correo;
+  document.getElementById("editar_telefono").value = participante.telefono;
 
   // Abre el formulario para editar
-  const modal = new bootstrap.Modal(document.getElementById("modal_editar"))
-  modal.show()
+  const modal = new bootstrap.Modal(document.getElementById("modal_editar"));
+  modal.show();
 }
 
 async function actualizar_participante() {
-
   //Obtiene los nuevos valores
-  const nombre = document.getElementById("editar_nombre").value
-  const correo = document.getElementById("editar_correo").value
-  const telefono = document.getElementById("editar_telefono").value
+  const nombre = document.getElementById("editar_nombre").value;
+  const correo = document.getElementById("editar_correo").value;
+  const telefono = document.getElementById("editar_telefono").value;
 
   // Nuevamente si algun campo esta vacio, muestra una alerta
   if (!nombre || !correo || !telefono) {
-    alert("Por favor completa todos los campos.")
-    return
+    alert("Por favor completa todos los campos.");
+    return;
   }
 
   try {
-    // Envia los datos actualizados al servidor 
-    await axios.patch(`${API_URL}/${id_editar}`, {nombre, correo, telefono})
+    // Envia los datos actualizados al servidor
+    await axios.patch(`${API_URL}/${id_editar}`, { nombre, correo, telefono });
     // Carga la tabla con los datos actualizados
-    obtenerParticipantes()
+    obtenerParticipantes();
   } catch (error) {
-    console.error("Error al actualizar participante: ", error)
-    alert("hubo un error al actualizar el participante")
+    console.error("Error al actualizar participante: ", error);
+    alert("hubo un error al actualizar el participante");
   }
 }
 
 // Asigna la funcion al boton guardar guardar de editar
 document
   .getElementById("btn_actualizar")
-  .addEventListener("click", actualizar_participante)
+  .addEventListener("click", actualizar_participante);
 
-
-
-
-const eliminarParticipante = async(id) =>{
+const eliminarParticipante = async (id) => {
   const confirmar = confirm(
-    "¿Está seguro de eliminar este participante?"
+    "¿Está seguro de eliminar este participante y todas sus inscripciones?",
   );
 
   if (!confirmar) return;
-  try{
-     const response = await axios.delete(`${API_URL}/${id}`)
-      alert("Participante eliminado correctamente")
-      obtenerParticipantes()
-  }catch(error){
-    console.error("Error al eliminar participante: ", error)
-    alert("hubo un error al eliminar el participante")
+  try {
+    const API_INSCRIPCIONES = "http://localhost:3000/inscripciones";
+    // Buscar las inscripciones del participante
+    const responseInscripciones = await axios.get(
+      `${API_INSCRIPCIONES}?participanteId=${id}`,
+    );
+    const inscripcionesDelParticipante = responseInscripciones.data;
+    //Eliminar cada inscripciones asociada
+    for (const inscripcion of inscripcionesDelParticipante) {
+      await axios.delete(`${API_INSCRIPCIONES}/${inscripcion.id}`);
+    }
+    //eliminar el participante
+    const response = await axios.delete(`${API_URL}/${id}`);
+    alert("Participante e inscripciones eliminados correctamente");
+    obtenerParticipantes();
+  } catch (error) {
+    console.error("Error al eliminar participante: ", error);
+    alert("hubo un error al eliminar el participante");
   }
-}
-
+};
 
 // Busca el boton guardar y le asigna la funcion al hacer click
 document
