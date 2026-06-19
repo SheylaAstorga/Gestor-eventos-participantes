@@ -91,18 +91,28 @@ document
 
 // Delete Eventos    
 const eliminarEvento = async (id) => {
-    
-    const confirmacion = confirm("¿Estás seguro desea eliminar este evento?");
-    if (!confirmacion) return; 
+    const confirmacion = confirm("¿Estás seguro de que querés eliminar este evento y TODAS sus inscripciones?");
+    if (!confirmacion) return;
+
     try {
         
-        const response = await axios.delete(`${API_URL}/${id}`);
-        alert("El evento fue eliminado con éxito.");
+        const API_INSCRIPCIONES = "http://localhost:3000/inscripciones";
+        const responseInscripciones = await axios.get(`${API_INSCRIPCIONES}?eventoId=${id}`);
+        const inscripcionesDelEvento = responseInscripciones.data;
 
+        for (const inscripcion of inscripcionesDelEvento) {
+            await axios.delete(`${API_INSCRIPCIONES}/${inscripcion.id}`);
+        }
+
+        const response = await axios.delete(`${API_URL}/${id}`);
+        
+        alert("El evento y sus inscripciones fueron eliminados con éxito.");
+        
+        
         obtenerEventos(); 
         
     } catch (error) {
-        console.log(error);
-        alert("Hubo un error al intentar eliminar el evento.");
+        console.log("Error en la eliminación en cascada:", error);
+        alert("Hubo un error al intentar eliminar el evento y sus inscripciones.");
     }
-};    
+};

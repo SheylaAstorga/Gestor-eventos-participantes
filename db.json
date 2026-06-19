@@ -7,14 +7,6 @@
       "lugar": "Aula 3",
       "capacidad": 30,
       "estado": "Abierto"
-    },
-    {
-      "nombre": "Taller Python",
-      "fecha": "2026-07-14",
-      "lugar": "aula 301 - UTN",
-      "capacidad": "50",
-      "estado": "Abierto",
-      "id": "x7gAD27dAOs"
     }
   ],
   "participantes": [
