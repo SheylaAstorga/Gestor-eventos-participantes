@@ -8,7 +8,7 @@ const obtenerEventos = async () => {
         const contenedor = document.getElementById('contenedor-eventos')
 
         const datos = response.data
-
+        
         datos.forEach (evento => {
             const div = document.createElement("div");
             div.classList.add("evento-card");
@@ -29,7 +29,7 @@ const obtenerEventos = async () => {
                 <button class="btn btn-warning">
                     Editar
                 </button>
-                <button class="btn btn-danger">
+                <button class="btn btn-danger" onclick="eliminarEvento('${evento.id}')"> 
                     Eliminar
                 </button>
             </div>
@@ -87,3 +87,22 @@ document
     .getElementById("btn_guardar")
     .addEventListener("click", crearEvento);
     
+
+
+// Delete Eventos    
+const eliminarEvento = async (id) => {
+    
+    const confirmacion = confirm("¿Estás seguro desea eliminar este evento?");
+    if (!confirmacion) return; 
+    try {
+        
+        const response = await axios.delete(`${API_URL}/${id}`);
+        alert("El evento fue eliminado con éxito.");
+
+        obtenerEventos(); 
+        
+    } catch (error) {
+        console.log(error);
+        alert("Hubo un error al intentar eliminar el evento.");
+    }
+};    
