@@ -27,9 +27,9 @@
     {
       "eventoId": "1",
       "participanteId": "2",
-      "fecha": "16/6/2026",
+      "fecha": "19/6/2026",
       "estado": "Confirmado",
-      "id": "T8VSWnmac5M"
+      "id": "zhWvctlbfYA"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

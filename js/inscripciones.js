@@ -152,7 +152,13 @@ function mostrarFilaInscripcion(inscripcion) {
     tdEstado.appendChild(badgeEstado);
 
     const tdAcciones = document.createElement("td");
-    tdAcciones.textContent = "-";
+    tdAcciones.innerHTML = `
+    <div class="btn-group btn-group-sm" role="group">
+        <button type="button" class="btn btn-outline-success" onclick="actualizarAsistencia('${inscripcion.id}', 'Asistió')">✔ Asistió</button>
+        <button type="button" class="btn btn-outline-danger" onclick="actualizarAsistencia('${inscripcion.id}', 'Ausente')">✖ Ausente</button>
+        <button type="button" class="btn btn-outline-secondary" onclick="cancelarInscripcion('${inscripcion.id}')"> Cancelar</button>
+    </div>
+`;
 
     fila.appendChild(tdParticipante);
     fila.appendChild(tdEvento);
@@ -168,7 +174,7 @@ function obtenerClaseEstado(estado) {
         return "badge bg-success";
     }
 
-    if (estado === "AsistiÓ") {
+    if (estado === "Asistió") {
         return "badge bg-primary";
     }
 
@@ -177,4 +183,35 @@ function obtenerClaseEstado(estado) {
     }
 
     return "badge bg-secondary";
+}
+
+// Actualizar el estado de las inscripciones
+async function actualizarAsistencia(idInscripcion, nuevoEstado) {
+    try {
+        await axios.patch(`${API_URL}/inscripciones/${idInscripcion}`, {
+            estado: nuevoEstado
+        });
+
+        await mostrarInscripciones(); 
+
+    } catch (error) {
+        console.log("Error al actualizar la asistencia:", error);
+        alert("Hubo un error al intentar cambiar el estado.");
+    }
+}
+
+//  Eliminar  inscripción 
+async function cancelarInscripcion(idInscripcion) {
+    const confirmacion = confirm("¿Estás seguro que desea cancelar y eliminar esta inscripción?");
+    if (!confirmacion) return; 
+    try {
+        await axios.delete(`${API_URL}/inscripciones/${idInscripcion}`);
+        
+        
+        await mostrarInscripciones(); 
+
+    } catch (error) {
+        console.log("Error al cancelar la inscripción:", error);
+        alert("Hubo un error al intentar eliminar la inscripción.");
+    }
 }
