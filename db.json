@@ -33,17 +33,24 @@
     },
     {
       "eventoId": "1",
-      "participanteId": "2",
+      "participanteId": "1",
       "fecha": "19/6/2026",
       "estado": "Ausente",
-      "id": "VqJuz7enYXM"
+      "id": "CbfZy0rQB_M"
     },
     {
       "eventoId": "1",
-      "participanteId": "1",
+      "participanteId": "2",
+      "fecha": "19/6/2026",
+      "estado": "Asistió",
+      "id": "CgF6OtOuhes"
+    },
+    {
+      "eventoId": "1",
+      "participanteId": "2",
       "fecha": "19/6/2026",
       "estado": "Confirmado",
-      "id": "n9RAINp6O7Q"
+      "id": "hWL-bBi-tys"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

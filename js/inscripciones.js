@@ -156,6 +156,7 @@ function mostrarFilaInscripcion(inscripcion) {
     <div class="btn-group btn-group-sm" role="group">
         <button type="button" class="btn btn-outline-success" onclick="actualizarAsistencia('${inscripcion.id}', 'Asistió')">✔ Asistió</button>
         <button type="button" class="btn btn-outline-danger" onclick="actualizarAsistencia('${inscripcion.id}', 'Ausente')">✖ Ausente</button>
+        <button type="button" class="btn btn-outline-secondary" onclick="cancelarInscripcion('${inscripcion.id}')"> Cancelar</button>
     </div>
 `;
 
@@ -196,5 +197,21 @@ async function actualizarAsistencia(idInscripcion, nuevoEstado) {
     } catch (error) {
         console.log("Error al actualizar la asistencia:", error);
         alert("Hubo un error al intentar cambiar el estado.");
+    }
+}
+
+//  Eliminar  inscripción 
+async function cancelarInscripcion(idInscripcion) {
+    const confirmacion = confirm("¿Estás seguro de desea cancelar y eliminar esta inscripción?");
+    if (!confirmacion) return; 
+    try {
+        await axios.delete(`${API_URL}/inscripciones/${idInscripcion}`);
+        
+        
+        await mostrarInscripciones(); 
+
+    } catch (error) {
+        console.log("Error al cancelar la inscripción:", error);
+        alert("Hubo un error al intentar eliminar la inscripción.");
     }
 }
