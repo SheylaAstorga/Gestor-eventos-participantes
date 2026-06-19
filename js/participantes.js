@@ -41,6 +41,14 @@ async function crear_participante() {
     return;
   }
 
+  // Validar correo
+  const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!emailValido.test(correo)) {
+    alert("Ingrese un correo electrónico válido.");
+    return;
+  }
+
   try {
     // Envia el nuevo participante al servidor y espera confirmacion
     await axios.post(API_URL, { nombre, correo, telefono });
