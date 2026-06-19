@@ -202,7 +202,7 @@ async function actualizarAsistencia(idInscripcion, nuevoEstado) {
 
 //  Eliminar  inscripción 
 async function cancelarInscripcion(idInscripcion) {
-    const confirmacion = confirm("¿Estás seguro de desea cancelar y eliminar esta inscripción?");
+    const confirmacion = confirm("¿Estás seguro que desea cancelar y eliminar esta inscripción?");
     if (!confirmacion) return; 
     try {
         await axios.delete(`${API_URL}/inscripciones/${idInscripcion}`);
