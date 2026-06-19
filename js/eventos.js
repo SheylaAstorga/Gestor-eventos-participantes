@@ -8,7 +8,7 @@ const obtenerEventos = async () => {
         const contenedor = document.getElementById('contenedor-eventos')
 
         const datos = response.data
-
+        
         datos.forEach (evento => {
             const div = document.createElement("div");
             div.classList.add("evento-card");
@@ -29,7 +29,7 @@ const obtenerEventos = async () => {
                 <button class="btn btn-warning">
                     Editar
                 </button>
-                <button class="btn btn-danger">
+                <button class="btn btn-danger" onclick="eliminarEvento('${evento.id}')"> 
                     Eliminar
                 </button>
             </div>
@@ -85,3 +85,32 @@ document
     .getElementById("btn_guardar")
     .addEventListener("click", crearEvento);
     
+
+
+// Delete Eventos    
+const eliminarEvento = async (id) => {
+    const confirmacion = confirm("¿Estás seguro de que querés eliminar este evento y TODAS sus inscripciones?");
+    if (!confirmacion) return;
+
+    try {
+        
+        const API_INSCRIPCIONES = "http://localhost:3000/inscripciones";
+        const responseInscripciones = await axios.get(`${API_INSCRIPCIONES}?eventoId=${id}`);
+        const inscripcionesDelEvento = responseInscripciones.data;
+
+        for (const inscripcion of inscripcionesDelEvento) {
+            await axios.delete(`${API_INSCRIPCIONES}/${inscripcion.id}`);
+        }
+
+        const response = await axios.delete(`${API_URL}/${id}`);
+        
+        alert("El evento y sus inscripciones fueron eliminados con éxito.");
+        
+        
+        obtenerEventos(); 
+        
+    } catch (error) {
+        console.log("Error en la eliminación en cascada:", error);
+        alert("Hubo un error al intentar eliminar el evento y sus inscripciones.");
+    }
+};

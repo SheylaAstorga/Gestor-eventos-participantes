@@ -1,22 +1,6 @@
 {
   "eventos": [
     {
-      "id": "evt001",
-      "nombre": "Taller de JavaScript",
-      "fecha": "20/07/2026",
-      "lugar": "Aula 3",
-      "capacidad": 30,
-      "estado": "Abierto"
-    },
-    {
-      "nombre": "asdasd",
-      "fecha": "2026-06-18",
-      "lugar": "asdasd",
-      "capacidad": "123",
-      "estado": "Abierto",
-      "id": "vvB5pLf7ENE"
-    },
-    {
       "nombre": "Hackaton 26'",
       "fecha": "2026-06-18",
       "lugar": "UTN",
@@ -31,6 +15,13 @@
       "capacidad": "50",
       "estado": "Finalizado",
       "id": "gIr4ELDcG_c"
+    },
+    {
+      "nombre": "Taller React - Native",
+      "fecha": "2026-06-22",
+      "lugar": "San Martin 654",
+      "capacidad": "300",
+      "id": "wQX16tKg-Uo"
     }
   ],
   "participantes": [
