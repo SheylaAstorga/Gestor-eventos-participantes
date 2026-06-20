@@ -1,6 +1,8 @@
 // API donde se guardan los participantes
 const API_URL = "http://localhost:3000/eventos";
 
+let edicionEventoId = null;
+
 const obtenerEventos = async () => {
     try {
         
@@ -26,7 +28,7 @@ const obtenerEventos = async () => {
             </div>
 
             <div class ="evento-footer">
-                <button class="btn btn-warning">
+                <button class="btn btn-warning" onclick="prepararEdicion('${evento.id}', '${evento.nombre}', '${evento.fecha}', '${evento.lugar}', '${evento.capacidad}')">
                     Editar
                 </button>
                 <button class="btn btn-danger" onclick="eliminarEvento('${evento.id}')"> 
@@ -81,9 +83,7 @@ const crearEvento = async () => {
 
 //Boton de crear evento que deberia ir al final.
 
-document
-    .getElementById("btn_guardar")
-    .addEventListener("click", crearEvento);
+document.getElementById("btn_guardar").onclick = crearEvento;
     
 
 
@@ -114,3 +114,87 @@ const eliminarEvento = async (id) => {
         alert("Hubo un error al intentar eliminar el evento y sus inscripciones.");
     }
 };
+
+//Updete Evento
+
+
+const prepararEdicion = async (id) => {
+    try {
+        const response = await axios.get(`${API_URL}/${id}`);
+        const evento = response.data;
+
+        
+        document.getElementById('input_nombre').value = evento.nombre;
+        document.getElementById('input_fecha').value = evento.fecha;
+        document.getElementById('input_lugar').value = evento.lugar;
+        document.getElementById('input_capacidad').value = evento.capacidad;
+
+        
+        edicionEventoId = id;
+
+        
+        const modalElement = document.getElementById('modalEvento');
+        const modal = bootstrap.Modal.getOrCreateInstance(modalElement);
+        modal.show();
+
+        
+        const botonGuardar = document.getElementById('btn_guardar');
+        botonGuardar.textContent = 'Editar Evento';
+        
+        botonGuardar.onclick = () => editarEvento();
+
+    } catch (error) {
+        console.log("Error al preparar la edición:", error);
+    }
+};
+
+const editarEvento = async () => {
+    try {
+        
+        const nombre = document.getElementById('input_nombre').value;
+        const fecha = document.getElementById('input_fecha').value;
+        const lugar = document.getElementById('input_lugar').value;
+        const capacidad = document.getElementById('input_capacidad').value;
+
+        if (!nombre || !fecha || !lugar || !capacidad) {
+            alert("Debes completar todos los datos, por favor.");
+            return;
+        }
+
+        const datosEvento = { nombre, fecha, lugar, capacidad };
+
+        if (edicionEventoId) {
+            const confirmacion = confirm("¿Estás seguro de que querés guardar los cambios de este evento?");
+            if (!confirmacion) return;
+
+            
+            await axios.patch(`${API_URL}/${edicionEventoId}`, datosEvento);
+            alert("El evento fue actualizado con éxito.");
+            
+            
+            document.getElementById('input_nombre').value = '';
+            document.getElementById('input_fecha').value = '';
+            document.getElementById('input_lugar').value = '';
+            document.getElementById('input_capacidad').value = '';
+        } 
+        
+        
+        const modalElement = document.getElementById('modalEvento');
+        const modal = bootstrap.Modal.getInstance(modalElement);
+        if (modal) modal.hide();
+
+        
+        obtenerEventos();
+
+        
+        const botonGuardar = document.getElementById('btn_guardar');
+        botonGuardar.textContent = 'Crear Evento';
+        botonGuardar.onclick = null; 
+        
+        edicionEventoId = null;
+    
+    } catch (error) {
+        console.log("Error al guardar:", error);
+        alert("Hubo un error al procesar la solicitud.");
+    }    
+}

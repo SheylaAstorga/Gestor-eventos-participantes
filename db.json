@@ -1,26 +1,18 @@
 {
   "eventos": [
     {
-      "nombre": "Hackaton 26'",
-      "fecha": "2026-06-18",
-      "lugar": "UTN",
-      "capacidad": "100",
-      "estado": "Abierto",
-      "id": "KGaBzKun9ok"
-    },
-    {
       "nombre": "Taller de Ciberseguridad Avanzada",
       "fecha": "2026-06-25",
       "lugar": "UTN",
-      "capacidad": "50",
+      "capacidad": "150000",
       "estado": "Finalizado",
       "id": "gIr4ELDcG_c"
     },
     {
       "nombre": "Taller React - Native",
       "fecha": "2026-06-22",
-      "lugar": "San Martin 654",
-      "capacidad": "300",
+      "lugar": "San Martin 654, san miguel de tucuman",
+      "capacidad": "78",
       "id": "wQX16tKg-Uo"
     }
   ],
