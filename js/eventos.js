@@ -62,6 +62,19 @@ const crearEvento = async () => {
             alert ("Debes completar todos los datos, por favor.")
             return;
         }
+        
+        const responseEventos = await axios.get(API_URL);
+        const eventosExistentes = responseEventos.data;
+
+        const eventoDuplicado = eventosExistentes.some(ev => 
+            ev.nombre.toLowerCase().trim() === nombre.toLowerCase() && ev.fecha === fecha
+        );
+
+        if (eventoDuplicado) {
+            alert("Ya existe un evento registrado con ese mismo nombre para esa fecha.");
+            return; 
+        }
+        
 
         const datosEvento = {
             nombre,
