@@ -16,7 +16,7 @@ const obtenerEventos = async () => {
             div.innerHTML =`
             <div class ="evento-header">
                 <h3>${evento.nombre}</h3>
-                <span class="badge bg-success"> ${evento.estado} </span>
+                
             </div>
 
             <div class="evento-body">
