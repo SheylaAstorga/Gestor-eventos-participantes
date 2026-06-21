@@ -40,8 +40,7 @@
             </header>
 
             <section class="participantes-header">
-                <button class="btn btn-primary" data-bs-toggle="modal"
-                    data-bs-target="#modal_participante">
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal_participante">
                     Registrar Participante
                 </button>
             </section>
@@ -84,9 +83,13 @@
                 </div>
 
                 <div class="modal-body">
-                    <input type="text" id="input_nombre" class="form-control mb-3" minlength="3" maxlength="30" placeholder="Nombre completo" required>
-                    <input type="email" id="input_correo" class="form-control mb-3" minlength="5" maxlength="50" placeholder="Correo electrónico" required>
-                    <input type="text" id="input_telefono" class="form-control" minlength="10" maxlength="15" placeholder="Teléfono" required>
+                    <input type="text" id="input_nombre" class="form-control mb-3" minlength="3" maxlength="30"
+                        placeholder="Nombre completo" required>
+                    <input type="email" id="input_correo" class="form-control mb-3" minlength="5" maxlength="50"
+                        placeholder="Correo electrónico" required>
+                    <input type="tel" id="editar_telefono" class="form-control" minlength="10" maxlength="15"
+                        pattern="[0-9]{10,15}" oninput="this.value=this.value.replace(/[^0-9]/g,'')"
+                        placeholder="Teléfono" required>
                 </div>
 
                 <div class="modal-footer">
@@ -109,9 +112,13 @@
                 </div>
 
                 <div class="modal-body">
-                    <input type="text" id="editar_nombre" class="form-control mb-3" minlength="3" maxlength="30" placeholder="Nombre completo" required>
-                    <input type="email" id="editar_correo" class="form-control mb-3" minlength="5" maxlength="50" placeholder="Correo electrónico" required>
-                    <input type="text" id="editar_telefono" class="form-control" minlength="10" maxlength="15" placeholder="Teléfono" required>
+                    <input type="text" id="editar_nombre" class="form-control mb-3" minlength="3" maxlength="30"
+                        placeholder="Nombre completo" required>
+                    <input type="email" id="editar_correo" class="form-control mb-3" minlength="5" maxlength="50"
+                        placeholder="Correo electrónico" required>
+                    <input type="tel" id="editar_telefono" class="form-control" minlength="10" maxlength="15"
+                        pattern="[0-9]{10,15}" oninput="this.value=this.value.replace(/[^0-9]/g,'')"
+                        placeholder="Teléfono" required>
                 </div>
 
                 <div class="modal-footer">

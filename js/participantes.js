@@ -49,6 +49,12 @@ async function crear_participante() {
     return;
   }
 
+  // Validar teléfono
+  if (!/^\d{10,15}$/.test(telefono)) {
+    alert("El teléfono debe contener entre 10 y 15 números.");
+    return;
+  }
+
   try {
     // Envia el nuevo participante al servidor y espera confirmacion
     await axios.post(API_URL, { nombre, correo, telefono });
