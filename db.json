@@ -1,19 +1,18 @@
 {
   "eventos": [
     {
-      "nombre": "Taller de Ciberseguridad Avanzada",
-      "fecha": "2026-06-25",
-      "lugar": "UTN",
-      "capacidad": "150000",
-      "estado": "Finalizado",
-      "id": "gIr4ELDcG_c"
+      "nombre": "Taller React - Native",
+      "fecha": "2026-07-10",
+      "lugar": "San Martin 654, san miguel de tucuman",
+      "capacidad": "50",
+      "id": "hP0mQqklFi8"
     },
     {
-      "nombre": "Taller React - Native",
-      "fecha": "2026-06-22",
-      "lugar": "San Martin 654, san miguel de tucuman",
-      "capacidad": "78",
-      "id": "wQX16tKg-Uo"
+      "nombre": "Taller TypeScript- avanzado ",
+      "fecha": "2026-07-09",
+      "lugar": "UTN",
+      "capacidad": "30",
+      "id": "SSx1JQptIG4"
     }
   ],
   "participantes": [

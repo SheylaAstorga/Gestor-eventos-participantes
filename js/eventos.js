@@ -8,9 +8,18 @@ const obtenerEventos = async () => {
         
         const response = await axios.get (API_URL);
         const contenedor = document.getElementById('contenedor-eventos')
-
+        const mensajeVacio = document.getElementById('sin-eventos');
         const datos = response.data
         
+
+        // Mostrar u ocultar mensaje
+        if (datos.length === 0) {
+            mensajeVacio.style.display = "block";
+        } else {
+            mensajeVacio.style.display = "none";
+        }
+
+
         datos.forEach (evento => {
             const div = document.createElement("div");
             div.classList.add("evento-card");
