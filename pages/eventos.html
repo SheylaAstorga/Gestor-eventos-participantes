@@ -80,10 +80,13 @@
 
                 <div class="modal-body">
 
-                    <input type="text" class="form-control mb-3" id="input_nombre"placeholder="Nombre del evento">
-                    <input type="date" class="form-control mb-3"id="input_fecha">
-                    <input type="text" class="form-control mb-3" id="input_lugar" placeholder="Lugar">
-                    <input type="number" class="form-control mb-3" id="input_capacidad" placeholder="Capacidad máxima">
+                    <input type="text" class="form-control mb-3" id="input_nombre" minlength="3" maxlength="50"
+                        placeholder="Nombre del evento">
+                    <input type="date" class="form-control mb-3" id="input_fecha">
+                    <input type="text" class="form-control mb-3" id="input_lugar" minlength="5" maxlength="40"
+                        placeholder="Lugar">
+                    <input type="number" min="1" max="200" oninput="if(this.value > 200) this.value = 200"
+                        class="form-control mb-3" id="input_capacidad" placeholder="Capacidad máxima">
 
                 </div>
 
