@@ -175,10 +175,9 @@ function mostrarFilaInscripcion(inscripcion) {
 
     const tdAcciones = document.createElement("td");
     tdAcciones.innerHTML = `
-    <div class="btn-group btn-group-sm" role="group">
-        <button type="button" class="btn btn-outline-success" onclick="actualizarAsistencia('${inscripcion.id}', 'Asistió')">✔ Asistió</button>
-        <button type="button" class="btn btn-outline-danger" onclick="actualizarAsistencia('${inscripcion.id}', 'Ausente')">✖ Ausente</button>
-        <button type="button" class="btn btn-outline-secondary" onclick="cancelarInscripcion('${inscripcion.id}')"> Cancelar</button>
+    <div class="d-flex gap-2">
+        <button type="button" class="btn btn-warning btn-sm" onclick="actualizarAsistencia('${inscripcion.id}', 'Ausente')">Editar</button>
+        <button type="button" class="btn btn-danger btn-sm" onclick="cancelarInscripcion('${inscripcion.id}')">Eliminar</button>
     </div>
 `;
 
