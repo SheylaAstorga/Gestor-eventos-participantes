@@ -1,5 +1,7 @@
 {
-  "eventos": [
+  "eventos": [],
+  "participantes": [],
+  "inscripciones": [
     {
       "nombre": "Taller React - Native",
       "fecha": "2026-07-10",
@@ -21,15 +23,5 @@
       "capacidad": "100",
       "id": "7tytGp_ndJw"
     }
-  ],
-  "participantes": [
-    {
-      "nombre": "Sheyla",
-      "correo": "sheylaastorga123@gmail.com",
-      "telefono": "3816937709",
-      "id": "xnR6C78lQa0"
-    }
-  ],
-  "inscripciones": [],
-  "$schema": "./node_modules/json-server/schema.json"
+  ]
 }

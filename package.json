@@ -1,8 +1,24 @@
 {
-	 "scripts": {
-      "dev": "json-server db.json"
+  "name": "Gestor-eventos-participantes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "json-server db.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-	"dependencies": {
-		"json-server": "1.0.0-beta.15"
-	}
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^11.5.1",
+      "onFail": "download"
+    }
+  },
+  "type": "module",
+  "dependencies": {
+    "json-server": "1.0.0-beta.15"
+  }
 }
