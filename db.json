@@ -1,28 +1,6 @@
 {
-  "eventos": [
-    {
-      "id": "1",
-      "nombre": "Taller para Gays",
-      "fecha": "2025-07-20",
-      "lugar": "Aula 3",
-      "capacidad": 30,
-      "estado": "Abierto"
-    }
-  ],
-  "participantes": [
-    {
-      "id": "1",
-      "nombre": "Facundo Boixados",
-      "correo": "facundoboixados@gmail.com",
-      "telefono": "381-590-3029"
-    },
-    {
-      "id": "2",
-      "nombre": "Sebastian Uncos",
-      "correo": "sebastianuncos@gmail.com",
-      "telefono": "381-402-2495"
-    }
-  ],
+  "eventos": [],
+  "participantes": [],
   "inscripciones": [
     {
       "eventoId": "1",
