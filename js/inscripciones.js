@@ -6,6 +6,7 @@ const filtroEvento = document.getElementById("filtroEvento");
 const filtroEstado = document.getElementById("filtroEstado");
 const tablaInscripciones = document.getElementById("tabla-inscripciones");
 const btnGuardar = document.getElementById("btnGuardarInscripcion");
+const selecEstadoModal = document.getElementById("estadoInscripcion");
 
 let eventos = [];
 let participantes = [];
@@ -22,6 +23,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     modalElement.addEventListener('hidden.bs.modal', () =>{
         selecEvento.value = '';
         selecParticipante.value = ''; 
+        selecEstadoModal.value = 'Confirmado';
+
+        btnGuardar.textContent = 'Guardar';
+        btnGuardar.onclick = null; 
+        btnGuardar.removeEventListener("click", crearInscripcion); 
+        btnGuardar.addEventListener("click", crearInscripcion);
 
     })
 });
@@ -108,7 +115,7 @@ async function crearInscripcion() {
         eventoId: (eventoId),
         participanteId: (participanteId),
         fecha: new Date().toLocaleDateString(),
-        estado: "Confirmado"
+        estado: selecEstadoModal.value
     };
 
     await axios.post(`${API_URL}/inscripciones`, datos);
@@ -176,7 +183,7 @@ function mostrarFilaInscripcion(inscripcion) {
     const tdAcciones = document.createElement("td");
     tdAcciones.innerHTML = `
     <div class="d-flex gap-2">
-        <button type="button" class="btn btn-warning btn-sm" onclick="actualizarAsistencia('${inscripcion.id}', 'Ausente')">Editar</button>
+        <button type="button" class="btn btn-warning btn-sm" onclick="actualizarAsistencia('${inscripcion.id}')">Editar</button>
         <button type="button" class="btn btn-danger btn-sm" onclick="cancelarInscripcion('${inscripcion.id}')">Eliminar</button>
     </div>
 `;
@@ -206,20 +213,74 @@ function obtenerClaseEstado(estado) {
     return "badge bg-secondary";
 }
 
-// Actualizar el estado de las inscripciones
-async function actualizarAsistencia(idInscripcion, nuevoEstado) {
+async function actualizarAsistencia(idInscripcion) {
     try {
-        await axios.patch(`${API_URL}/inscripciones/${idInscripcion}`, {
-            estado: nuevoEstado
-        });
+        
+        const respuesta = await axios.get(`${API_URL}/inscripciones/${idInscripcion}`);
+        const inscripcion = respuesta.data;
+        
+        selecEvento.value = inscripcion.eventoId;
+        selecParticipante.value = inscripcion.participanteId;
+        
+        if (selecEstadoModal) {
+            selecEstadoModal.value = inscripcion.estado;
+        }
 
-        await mostrarInscripciones(); 
+        
+        btnGuardar.textContent = "Editar";
+        btnGuardar.removeEventListener("click", crearInscripcion);
+        
+        
+        btnGuardar.onclick = async () => {
+            const eventoIdEdit = selecEvento.value;
+            const participanteIdEdit = selecParticipante.value;
+            const estadoEdit = selecEstadoModal ? selecEstadoModal.value : "Confirmado";
+
+            
+            try {
+                const validacion = await axios.get(`${API_URL}/inscripciones?eventoId=${eventoIdEdit}&participanteId=${participanteIdEdit}`);
+                const duplicado = validacion.data.find(insc => insc.id !== idInscripcion);
+
+                if (duplicado) {
+                    alert('Este participante ya se encuentra inscripto en este evento.');
+                    return;
+                }
+            } catch (error) {
+                console.log("Error en la validación:", error);
+            }
+
+            try {
+                await axios.patch(`${API_URL}/inscripciones/${idInscripcion}`, {
+                    eventoId: eventoIdEdit,
+                    participanteId: participanteIdEdit,
+                    estado: estadoEdit // Ahora sí mandamos el estado nuevo
+                });
+
+                
+                await mostrarInscripciones();
+                
+                
+                const modal = bootstrap.Modal.getOrCreateInstance(document.getElementById("modalInscripcion"));
+                modal.hide();
+
+            } catch (error) {
+                console.log("Error al hacer el PATCH:", error);
+                alert("Hubo un problema al guardar los cambios en el servidor.");
+            }
+        };
+
+        const modal = bootstrap.Modal.getOrCreateInstance(document.getElementById("modalInscripcion"));
+        modal.show();
 
     } catch (error) {
-        console.log("Error al actualizar la asistencia:", error);
-        alert("Hubo un error al intentar cambiar el estado.");
+        console.log("Error al cargar la edición:", error);
+        alert("Hubo un error al intentar abrir la inscripción.");
     }
 }
+
+
+
+
 
 //  Eliminar  inscripción 
 async function cancelarInscripcion(idInscripcion) {

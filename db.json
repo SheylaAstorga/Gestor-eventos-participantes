@@ -49,46 +49,39 @@
   ],
   "inscripciones": [
     {
-      "eventoId": "pwNZ-DOv-Jc",
-      "participanteId": "HAqxz9f1B0o",
-      "fecha": "22/6/2026",
-      "estado": "Ausente",
-      "id": "-9DN0xXKek0"
-    },
-    {
-      "eventoId": "6iuhmfcGtdU",
-      "participanteId": "gw9WgWYd-0E",
-      "fecha": "22/6/2026",
-      "estado": "Ausente",
-      "id": "VWU095YnAPc"
-    },
-    {
       "eventoId": "6iuhmfcGtdU",
       "participanteId": "iwg-xuUCDxY",
       "fecha": "22/6/2026",
-      "estado": "Ausente",
+      "estado": "Asistió",
       "id": "dRaPYl4wqcY"
-    },
-    {
-      "eventoId": "6iuhmfcGtdU",
-      "participanteId": "HAqxz9f1B0o",
-      "fecha": "22/6/2026",
-      "estado": "Ausente",
-      "id": "PGD-D8FpRe8"
     },
     {
       "eventoId": "pwNZ-DOv-Jc",
       "participanteId": "WU1Bw2IKPVM",
       "fecha": "22/6/2026",
-      "estado": "Ausente",
+      "estado": "Confirmado",
       "id": "22gMVTFrFCA"
+    },
+    {
+      "eventoId": "pwNZ-DOv-Jc",
+      "participanteId": "iwg-xuUCDxY",
+      "fecha": "22/6/2026",
+      "estado": "Asistió",
+      "id": "-LHwdqWkFE8"
     },
     {
       "eventoId": "6iuhmfcGtdU",
       "participanteId": "WU1Bw2IKPVM",
       "fecha": "22/6/2026",
-      "estado": "Ausente",
-      "id": "DB0PlLemDoo"
+      "id": "-o2bCT7YdfM",
+      "estado": "Ausente"
+    },
+    {
+      "eventoId": "pwNZ-DOv-Jc",
+      "participanteId": "gw9WgWYd-0E",
+      "fecha": "22/6/2026",
+      "estado": "Confirmado",
+      "id": "QwLLJ6Dj81Y"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
