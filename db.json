@@ -39,21 +39,20 @@
       "correo": "lobizon.l.@gmail.com",
       "telefono": "3816937709",
       "id": "xZvDj5ll65Y"
+    },
+    {
+      "nombre": "sebastian",
+      "correo": "suncos.empleo@gmail.com",
+      "telefono": "13165115187",
+      "id": "iwg-xuUCDxY"
     }
   ],
   "inscripciones": [
     {
-      "eventoId": "6iuhmfcGtdU",
-      "participanteId": "gw9WgWYd-0E",
-      "fecha": "22/6/2026",
-      "estado": "Asistió",
-      "id": "2MydOu-RtC0"
-    },
-    {
       "eventoId": "pwNZ-DOv-Jc",
       "participanteId": "HAqxz9f1B0o",
       "fecha": "22/6/2026",
-      "estado": "Confirmado",
+      "estado": "Ausente",
       "id": "-9DN0xXKek0"
     },
     {
@@ -62,6 +61,34 @@
       "fecha": "22/6/2026",
       "estado": "Confirmado",
       "id": "VWU095YnAPc"
+    },
+    {
+      "eventoId": "6iuhmfcGtdU",
+      "participanteId": "iwg-xuUCDxY",
+      "fecha": "22/6/2026",
+      "estado": "Confirmado",
+      "id": "dRaPYl4wqcY"
+    },
+    {
+      "eventoId": "6iuhmfcGtdU",
+      "participanteId": "HAqxz9f1B0o",
+      "fecha": "22/6/2026",
+      "estado": "Confirmado",
+      "id": "PGD-D8FpRe8"
+    },
+    {
+      "eventoId": "pwNZ-DOv-Jc",
+      "participanteId": "WU1Bw2IKPVM",
+      "fecha": "22/6/2026",
+      "estado": "Confirmado",
+      "id": "22gMVTFrFCA"
+    },
+    {
+      "eventoId": "6iuhmfcGtdU",
+      "participanteId": "WU1Bw2IKPVM",
+      "fecha": "22/6/2026",
+      "estado": "Confirmado",
+      "id": "DB0PlLemDoo"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

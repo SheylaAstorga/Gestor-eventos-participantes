@@ -17,6 +17,13 @@ document.addEventListener("DOMContentLoaded", async () => {
     btnGuardar.addEventListener("click", crearInscripcion);
     filtroEvento.addEventListener("change", mostrarInscripciones);
     filtroEstado.addEventListener("change", mostrarInscripciones);
+
+    const modalElement = document.getElementById('modalInscripcion')
+    modalElement.addEventListener('hidden.bs.modal', () =>{
+        selecEvento.value = '';
+        selecParticipante.value = ''; 
+
+    })
 });
 
 async function cargarDatosIniciales() {
@@ -79,6 +86,21 @@ async function crearInscripcion() {
 
     if (eventoId === "" || participanteId === "") {
         alert("Debe seleccionar un evento y un participante");
+        return;
+    }
+
+    //Validacion para que solo se puden inscribir a un evento
+
+    try{
+        const respuestaValidacion = await axios.get(`${API_URL}/inscripciones?eventoId=${eventoId}&participanteId=${participanteId}`)
+
+        if(respuestaValidacion.data.length > 0){
+            alert ('Este participante ya se encuentra inscripto en este evento.')
+            return;
+        }
+    }catch (error){
+        console.log('Error al validar duplicados: ', error)
+        alert('Hubo un problema al verificar la inscripción')
         return;
     }
 
