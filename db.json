@@ -1,5 +1,27 @@
 {
-  "eventos": [],
+  "eventos": [
+    {
+      "nombre": "Taller React - Native",
+      "fecha": "2026-07-10",
+      "lugar": "San Martin 654, san miguel de tucuman",
+      "capacidad": "50",
+      "id": "hP0mQqklFi8"
+    },
+    {
+      "nombre": "Taller TypeScript- avanzado ",
+      "fecha": "2026-07-09",
+      "lugar": "UTN",
+      "capacidad": "30",
+      "id": "SSx1JQptIG4"
+    },
+    {
+      "nombre": "Hackaton 2026",
+      "fecha": "2026-07-30",
+      "lugar": "UTN",
+      "capacidad": "100",
+      "id": "7tytGp_ndJw"
+    }
+  ],
   "participantes": [
     {
       "nombre": "Sheyla",
@@ -8,5 +30,6 @@
       "id": "xnR6C78lQa0"
     }
   ],
-  "inscripciones": []
+  "inscripciones": [],
+  "$schema": "./node_modules/json-server/schema.json"
 }
