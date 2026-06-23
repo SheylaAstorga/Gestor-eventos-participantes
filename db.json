@@ -1,5 +1,89 @@
 {
-  "eventos": [],
-  "participantes": [],
-  "inscripciones": []
+  "eventos": [
+    {
+      "nombre": "Taller React - Native",
+      "fecha": "2026-07-03",
+      "lugar": "San Martin 654, san miguel de tucuman",
+      "capacidad": "10",
+      "id": "pwNZ-DOv-Jc"
+    },
+    {
+      "nombre": "JavaScript - Nivel inicial",
+      "fecha": "2026-06-24",
+      "lugar": "Colegio IPT",
+      "capacidad": "60",
+      "id": "j6Ky3ukdFjI"
+    },
+    {
+      "nombre": "Taller de carpintería",
+      "fecha": "2026-07-08",
+      "lugar": "Técnica 2 Turno-Noche",
+      "capacidad": "100",
+      "id": "d-mOa9PnO2U"
+    }
+  ],
+  "participantes": [
+    {
+      "nombre": "Facu",
+      "correo": "facu123@gmail.com",
+      "telefono": "3811233315",
+      "id": "EUCkYv7bcVI"
+    },
+    {
+      "nombre": "Juan",
+      "correo": "juand123@gmail.com",
+      "telefono": "3817724563",
+      "id": "SuYhIGTq7eQ"
+    },
+    {
+      "nombre": "Ignacio",
+      "correo": "nacho123@gmail.com",
+      "telefono": "3815463321",
+      "id": "Ua9KaqeC9B4"
+    },
+    {
+      "nombre": "Sheyla",
+      "correo": "sheyla123@gmail.com",
+      "telefono": "3816937709",
+      "id": "DmQCNmiAqvM"
+    },
+    {
+      "nombre": "Seba",
+      "correo": "seba123@gmail.com",
+      "telefono": "3811233315",
+      "id": "kXMoiqpwRxU"
+    }
+  ],
+  "inscripciones": [
+    {
+      "eventoId": "pwNZ-DOv-Jc",
+      "participanteId": "Ua9KaqeC9B4",
+      "fecha": "23/6/2026",
+      "id": "FVUIU-I3Kn0"
+    },
+    {
+      "eventoId": "d-mOa9PnO2U",
+      "participanteId": "DmQCNmiAqvM",
+      "fecha": "23/6/2026",
+      "id": "QyIz3sNbVnw"
+    },
+    {
+      "eventoId": "pwNZ-DOv-Jc",
+      "participanteId": "SuYhIGTq7eQ",
+      "fecha": "23/6/2026",
+      "id": "To5mph86tTs"
+    },
+    {
+      "eventoId": "d-mOa9PnO2U",
+      "participanteId": "EUCkYv7bcVI",
+      "fecha": "23/6/2026",
+      "id": "XrI0_vwr3WU"
+    },
+    {
+      "eventoId": "j6Ky3ukdFjI",
+      "participanteId": "kXMoiqpwRxU",
+      "fecha": "23/6/2026",
+      "id": "UzWhzfrErLI"
+    }
+  ]
 }
