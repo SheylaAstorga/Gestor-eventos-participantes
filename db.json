@@ -52,7 +52,7 @@
       "eventoId": "pwNZ-DOv-Jc",
       "participanteId": "WU1Bw2IKPVM",
       "fecha": "22/6/2026",
-      "estado": "Confirmado",
+      "estado": "Asistió",
       "id": "22gMVTFrFCA"
     },
     {
@@ -60,7 +60,7 @@
       "participanteId": "WU1Bw2IKPVM",
       "fecha": "22/6/2026",
       "id": "-o2bCT7YdfM",
-      "estado": "Ausente"
+      "estado": "Confirmado"
     },
     {
       "eventoId": "pwNZ-DOv-Jc",
@@ -68,6 +68,13 @@
       "fecha": "22/6/2026",
       "estado": "Confirmado",
       "id": "QwLLJ6Dj81Y"
+    },
+    {
+      "eventoId": "pwNZ-DOv-Jc",
+      "participanteId": "iwg-xuUCDxY",
+      "fecha": "22/6/2026",
+      "estado": "Asistió",
+      "id": "stlkqXYK3No"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

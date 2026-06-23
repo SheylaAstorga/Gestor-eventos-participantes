@@ -262,6 +262,7 @@ async function actualizarAsistencia(idInscripcion) {
                 
                 const modal = bootstrap.Modal.getOrCreateInstance(document.getElementById("modalInscripcion"));
                 modal.hide();
+                alert('El estado de la inscripción se modifico correctamente')
 
             } catch (error) {
                 console.log("Error al hacer el PATCH:", error);
