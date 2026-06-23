@@ -8,18 +8,18 @@
       "id": "pwNZ-DOv-Jc"
     },
     {
-      "nombre": "Fiestichola",
-      "fecha": "2026-07-04",
-      "lugar": "casa del data engineer",
-      "capacidad": "10",
-      "id": "6iuhmfcGtdU"
+      "nombre": "JavaScript - Nivel inicial",
+      "fecha": "2026-06-24",
+      "lugar": "Colegio IPT",
+      "capacidad": "60",
+      "id": "j6Ky3ukdFjI"
     },
     {
-      "nombre": "Lobo Juan David",
-      "fecha": "2026-06-30",
-      "lugar": "12",
-      "capacidad": "40",
-      "id": "3V9ewm7IO5s"
+      "nombre": "Taller de carpintería",
+      "fecha": "2026-07-08",
+      "lugar": "Técnica 2 Turno-Noche",
+      "capacidad": "100",
+      "id": "d-mOa9PnO2U"
     }
   ],
   "participantes": [
@@ -30,38 +30,19 @@
       "id": "HAqxz9f1B0o"
     },
     {
-      "nombre": "jose",
-      "correo": "josepepito@gmail.com",
-      "telefono": "421312421142",
-      "id": "WU1Bw2IKPVM"
-    },
-    {
-      "nombre": "lobo",
-      "correo": "lobizon.l.@gmail.com",
-      "telefono": "3811233315",
-      "id": "gw9WgWYd-0E"
-    },
-    {
-      "nombre": "lobo",
-      "correo": "lobizon.l.@gmail.com",
-      "telefono": "3816937709",
-      "id": "xZvDj5ll65Y"
-    },
-    {
       "nombre": "Seba",
       "correo": "seba@gmail.com",
       "telefono": "3815904077",
       "id": "5UlFyRYASog"
+    },
+    {
+      "nombre": "Nacho",
+      "correo": "nachito123@gmail.com",
+      "telefono": "3815463321",
+      "id": "YX0wVJYqEkg"
     }
   ],
   "inscripciones": [
-    {
-      "eventoId": "6iuhmfcGtdU",
-      "participanteId": "gw9WgWYd-0E",
-      "fecha": "22/6/2026",
-      "estado": "Asistió",
-      "id": "2MydOu-RtC0"
-    },
     {
       "eventoId": "pwNZ-DOv-Jc",
       "participanteId": "HAqxz9f1B0o",
@@ -70,19 +51,18 @@
       "id": "-9DN0xXKek0"
     },
     {
-      "eventoId": "6iuhmfcGtdU",
-      "participanteId": "gw9WgWYd-0E",
-      "fecha": "22/6/2026",
-      "estado": "Confirmado",
-      "id": "VWU095YnAPc"
-    },
-    {
       "eventoId": "pwNZ-DOv-Jc",
       "participanteId": "5UlFyRYASog",
       "fecha": "22/6/2026",
       "estado": "Confirmado",
       "id": "YDboqMJLq-Y"
+    },
+    {
+      "eventoId": "d-mOa9PnO2U",
+      "participanteId": "YX0wVJYqEkg",
+      "fecha": "23/6/2026",
+      "estado": "Confirmado",
+      "id": "x7s_X6rPSdw"
     }
-  ],
-  "$schema": "./node_modules/json-server/schema.json"
+  ]
 }
