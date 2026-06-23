@@ -145,7 +145,7 @@ async function mostrarInscripciones() {
     if (eventoId === "") {
         respuesta = await axios.get(`${API_URL}/inscripciones`);
     } else {
-        respuesta = await axios.get(`${API_URL}/inscripciones?eventoId=${Number(eventoId)}`);
+        respuesta = await axios.get(`${API_URL}/inscripciones?eventoId=${(eventoId)}`);
     }
 
     let inscripciones = respuesta.data;
