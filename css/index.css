@@ -96,21 +96,20 @@ body{
 
 .actions-container{
     display: flex;
-    gap: 15px;
+    gap: 20px;
     flex-wrap: wrap;
 }
 
-.info-grid{
-    margin-top: 40px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
-    gap: 20px;
+.equipo-desarrollo {
+
+  margin-top: 150px;
 }
 
 .equipo-img{
     width: 100px;
     height: 100px;
     object-fit: cover;
+    margin-top: 20px;
 }
 
 
