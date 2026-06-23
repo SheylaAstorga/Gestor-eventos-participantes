@@ -3,19 +3,39 @@ const API_URL = "http://localhost:3000/participantes";
 
 const obtenerParticipantes = async () => {
   try {
+    // Trae los participantes, inscripciones y eventos que haya en el servidor
     const response = await axios.get(API_URL);
-    console.log(response.data);
+    const respuesta_inscripciones = await axios.get(
+      "http://localhost:3000/inscripciones",
+    );
+    const respuesta_eventos = await axios.get("http://localhost:3000/eventos");
+
     const tbody = document.getElementById("tabla-participantes");
     const datos = response.data;
-    tbody.textContent = "";
+
     datos.forEach((participante) => {
+      // Busca la inscripcion del participante
+      const inscripcion = respuesta_inscripciones.data.find(
+        (i) => i.participanteId == participante.id,
+      );
+      // Si tiene inscripcion muestra el nombre del evento, sino mostrara un guion
+      let participante_evento = "-";
+      if (inscripcion) {
+        const evento = respuesta_eventos.data.find(
+          (e) => e.id == inscripcion.eventoId,
+        );
+        if (evento) {
+          participante_evento = evento.nombre;
+        }
+      }
+
       const tr = document.createElement("tr");
       tr.innerHTML = `
                 <td>${participante.id}</td>
                 <td>${participante.nombre}</td>
                 <td>${participante.correo}</td>
                 <td>${participante.telefono}</td>
-                <td>${participante.eventoId}</td>
+                <td>${participante_evento}</td>
                 <td><button class="btn btn-sm btn-warning" onclick="editar_participante('${participante.id}')">Editar</button>
                 <button class="btn btn-sm btn-danger" onclick="eliminarParticipante('${participante.id}')">Eliminar</button>
                 </td>
@@ -55,11 +75,25 @@ async function crear_participante() {
     return;
   }
 
+  // Verifica si ya existe un participante con el mismo correo
+  const respuesta_existente = await axios.get(API_URL);
+  const existe = respuesta_existente.data.find((p) => p.correo === correo);
+
+  if (existe) {
+    alert("Ya existe un participante con ese correo electronico.");
+    return;
+  }
+
   try {
     // Envia el nuevo participante al servidor y espera confirmacion
     await axios.post(API_URL, { nombre, correo, telefono });
-    alert("Participante registrado correctamente");
+    // Cierra el formulario solo si se guardo correctamente
+    const modal = bootstrap.Modal.getInstance(
+      document.getElementById("modal_participante"),
+    );
+    modal.hide();
 
+    alert("Participante registrado correctamente");
     obtenerParticipantes();
   } catch (error) {
     // Si hay un error lo muestra en consola y avisa al usuario
@@ -154,26 +188,44 @@ document
   .getElementById("buscar-participante")
   .addEventListener("input", async (e) => {
     const texto = e.target.value.toLowerCase();
-
     const response = await axios.get(API_URL);
 
     const participantesFiltrados = response.data.filter((participante) =>
       participante.nombre.toLowerCase().includes(texto),
     );
-
     const tbody = document.getElementById("tabla-participantes");
-
     tbody.textContent = "";
+
+    const respuesta_inscripciones = await axios.get(
+      "http://localhost:3000/inscripciones",
+    );
+
+    const respuesta_eventos = await axios.get("http://localhost:3000/eventos");
 
     participantesFiltrados.forEach((participante) => {
       const tr = document.createElement("tr");
+      const inscripcion = respuesta_inscripciones.data.find(
+        (i) => i.participanteId == participante.id,
+      );
+
+      let participante_evento = "-";
+
+      if (inscripcion) {
+        const evento = respuesta_eventos.data.find(
+          (e) => e.id == inscripcion.eventoId,
+        );
+
+        if (evento) {
+          participante_evento = evento.nombre;
+        }
+      }
 
       tr.innerHTML = `
         <td>${participante.id}</td>
         <td>${participante.nombre}</td>
         <td>${participante.correo}</td>
         <td>${participante.telefono}</td>
-        <td>-</td>
+        <td>${participante_evento}</td>
         <td>
           <button class="btn btn-sm btn-warning" onclick="editar_participante('${participante.id}')">Editar</button>
           <button class="btn btn-sm btn-danger">Eliminar</button>
