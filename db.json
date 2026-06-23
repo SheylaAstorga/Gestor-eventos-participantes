@@ -46,6 +46,12 @@
       "correo": "lobizon.l.@gmail.com",
       "telefono": "3816937709",
       "id": "xZvDj5ll65Y"
+    },
+    {
+      "nombre": "Seba",
+      "correo": "seba@gmail.com",
+      "telefono": "3815904077",
+      "id": "5UlFyRYASog"
     }
   ],
   "inscripciones": [
@@ -69,6 +75,13 @@
       "fecha": "22/6/2026",
       "estado": "Confirmado",
       "id": "VWU095YnAPc"
+    },
+    {
+      "eventoId": "pwNZ-DOv-Jc",
+      "participanteId": "5UlFyRYASog",
+      "fecha": "22/6/2026",
+      "estado": "Confirmado",
+      "id": "YDboqMJLq-Y"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
