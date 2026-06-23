@@ -24,45 +24,66 @@
   ],
   "participantes": [
     {
-      "nombre": "lulu",
-      "correo": "sheylaastorga1998@gmail.com",
+      "nombre": "Facu",
+      "correo": "facu123@gmail.com",
+      "telefono": "3811233315",
+      "id": "EUCkYv7bcVI"
+    },
+    {
+      "nombre": "Juan",
+      "correo": "juand123@gmail.com",
+      "telefono": "3817724563",
+      "id": "SuYhIGTq7eQ"
+    },
+    {
+      "nombre": "Ignacio",
+      "correo": "nacho123@gmail.com",
+      "telefono": "3815463321",
+      "id": "Ua9KaqeC9B4"
+    },
+    {
+      "nombre": "Sheyla",
+      "correo": "sheyla123@gmail.com",
       "telefono": "3816937709",
-      "id": "HAqxz9f1B0o"
+      "id": "DmQCNmiAqvM"
     },
     {
       "nombre": "Seba",
-      "correo": "seba@gmail.com",
-      "telefono": "3815904077",
-      "id": "5UlFyRYASog"
-    },
-    {
-      "nombre": "Nacho",
-      "correo": "nachito123@gmail.com",
-      "telefono": "3815463321",
-      "id": "YX0wVJYqEkg"
+      "correo": "seba123@gmail.com",
+      "telefono": "3811233315",
+      "id": "kXMoiqpwRxU"
     }
   ],
   "inscripciones": [
     {
       "eventoId": "pwNZ-DOv-Jc",
-      "participanteId": "HAqxz9f1B0o",
-      "fecha": "22/6/2026",
-      "estado": "Confirmado",
-      "id": "-9DN0xXKek0"
-    },
-    {
-      "eventoId": "pwNZ-DOv-Jc",
-      "participanteId": "5UlFyRYASog",
-      "fecha": "22/6/2026",
-      "estado": "Confirmado",
-      "id": "YDboqMJLq-Y"
+      "participanteId": "Ua9KaqeC9B4",
+      "fecha": "23/6/2026",
+      "id": "FVUIU-I3Kn0"
     },
     {
       "eventoId": "d-mOa9PnO2U",
-      "participanteId": "YX0wVJYqEkg",
+      "participanteId": "DmQCNmiAqvM",
       "fecha": "23/6/2026",
-      "estado": "Confirmado",
-      "id": "x7s_X6rPSdw"
+      "id": "QyIz3sNbVnw"
+    },
+    {
+      "eventoId": "pwNZ-DOv-Jc",
+      "participanteId": "SuYhIGTq7eQ",
+      "fecha": "23/6/2026",
+      "id": "To5mph86tTs"
+    },
+    {
+      "eventoId": "d-mOa9PnO2U",
+      "participanteId": "EUCkYv7bcVI",
+      "fecha": "23/6/2026",
+      "id": "XrI0_vwr3WU"
+    },
+    {
+      "eventoId": "j6Ky3ukdFjI",
+      "participanteId": "kXMoiqpwRxU",
+      "fecha": "23/6/2026",
+      "id": "UzWhzfrErLI"
     }
   ]
 }
