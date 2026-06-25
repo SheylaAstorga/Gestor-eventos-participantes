@@ -8,13 +8,6 @@
       "id": "pwNZ-DOv-Jc"
     },
     {
-      "nombre": "JavaScript - Nivel inicial",
-      "fecha": "2026-06-24",
-      "lugar": "Colegio IPT",
-      "capacidad": "60",
-      "id": "j6Ky3ukdFjI"
-    },
-    {
       "nombre": "Taller de carpintería",
       "fecha": "2026-07-08",
       "lugar": "Técnica 2 Turno-Noche",
@@ -80,10 +73,11 @@
       "id": "XrI0_vwr3WU"
     },
     {
-      "eventoId": "j6Ky3ukdFjI",
+      "eventoId": "pwNZ-DOv-Jc",
       "participanteId": "kXMoiqpwRxU",
-      "fecha": "23/6/2026",
-      "id": "UzWhzfrErLI"
+      "fecha": "25/6/2026",
+      "id": "QzAGujR7OBo"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

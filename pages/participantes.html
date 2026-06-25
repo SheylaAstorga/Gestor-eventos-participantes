@@ -84,7 +84,7 @@
 
                 <div class="modal-body">
                     <input type="text" id="input_nombre" class="form-control mb-3" minlength="3" maxlength="30"
-                        placeholder="Nombre completo" required>
+                        placeholder="Nombre completo"oninput="this.value=this.value.replace(/[^a-zA-ZáéíóúÁÉÍÓÚñÑ\s]/g,'')" required>
                     <input type="email" id="input_correo" class="form-control mb-3" minlength="5" maxlength="50"
                         placeholder="Correo electrónico" required>
                     <input type="tel" id="input_telefono" class="form-control" minlength="10" maxlength="15"
@@ -113,7 +113,7 @@
 
                 <div class="modal-body">
                     <input type="text" id="editar_nombre" class="form-control mb-3" minlength="3" maxlength="30"
-                        placeholder="Nombre completo" required>
+                        placeholder="Nombre completo" oninput="this.value=this.value.replace(/[^a-zA-ZáéíóúÁÉÍÓÚñÑ\s]/g,'')" required>
                     <input type="email" id="editar_correo" class="form-control mb-3" minlength="5" maxlength="50"
                         placeholder="Correo electrónico" required>
                     <input type="tel" id="editar_telefono" class="form-control" minlength="10" maxlength="15"

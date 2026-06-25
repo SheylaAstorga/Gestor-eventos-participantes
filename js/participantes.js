@@ -61,6 +61,13 @@ async function crear_participante() {
     return;
   }
 
+  const nombreValido = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{3,30}$/;
+
+  if (!nombreValido.test(nombre)) {
+    alert("El nombre solo puede contener letras y espacios.");
+    return;
+  }
+
   // Validar correo
   const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 

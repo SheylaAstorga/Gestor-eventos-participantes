@@ -148,6 +148,14 @@ async function mostrarInscripciones() {
 
     const inscripciones = respuesta.data;
 
+    const emptyState = document.getElementById("empty-state-inscripciones");
+
+    if (inscripciones.length === 0) {
+        emptyState.style.display = "block";
+    } else {
+        emptyState.style.display = "none";
+    }
+
     inscripciones.forEach(inscripcion => {
         mostrarFilaInscripcion(inscripcion);
     });
